@@ -1,0 +1,350 @@
+:root {
+    --background:   #22252C;
+    --selection:    #262a31;
+    --black:        #282C34;
+    --borders:      #30353F;
+    --numbers:      #393F4B;
+    --text-options: #4B5263;
+    --text:         #ABB2BF;
+    --title:        #FFFFFF;
+    --blue:         #61AFEF;
+    --cyan:         #56B6C2;
+    --green:        #98C379;
+    --yellow:       #D19A66;
+    --red:          #E06C75;
+    --magenta:      #C678DD;
+
+    --font-monospace:       'Fira Code', monospace;
+    --font-sans-serif:      'Fira Sans', sans-serif;
+    --font-icons:           'Fira Code Nerd Font';
+    --font-size:            14px
+}
+
+
+.blue {
+    color: var(--blue);
+}
+
+.cyan {
+    color: var(--cyan);
+}
+
+.green {
+    color: var(--green);
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.red {
+    color: var(--red);
+}
+
+.magenta {
+    color: var(--magenta);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+body {
+    font-family: var(--font-monospace);
+    font-size: var(--font-size);
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 90em;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    height: 8.5em;
+    padding-top: 3.6em;
+    padding-bottom: 2.85em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 3.6em;
+    padding-right: 3.6em;
+    flex-grow: 1
+}
+
+h1 {
+    font-size: 4em;
+    font-family: var(--font-sans-serif);
+    font-weight: 900;
+    color: var(--title);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    font-family: var(--font-sans-serif);
+    font-weight: bold;
+}
+
+.avatar {
+    background-image: url("../img/avatar.jpg");
+    min-width: 8.5em;
+    height: 8.5em;
+    background-size: cover;
+    border-radius: 8.5em;
+    display: table-cell
+}
+
+.options-container {
+    display: flex;
+    align-items: center;
+    color: var(--text-options);
+    line-height: 2em;
+}
+
+.icon {
+    font-size: 1.5em;
+    line-height: 1em;
+    position: relative;
+    top: 0.07em;
+    font-family: var(--font-icons);
+}
+
+.content-container {
+    background-color: var(--black);
+    border-radius: 20px;
+    border: 1px solid var(--borders);
+    box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.05);
+    display: flex;
+    line-height: 2em;
+    height: calc(100vh - 18.5em);
+}
+
+nav {
+    display: table-cell;
+    border-right: 1px solid var(--borders);
+    padding-top: 1.8em;
+    padding-bottom: 1.8em;
+    min-width: 18em;
+    overflow: scroll;
+    -ms-overflow-style: none;   /* for Internet Explorer, Edge */
+    scrollbar-width: none;      /* for Firefox */
+    overflow-y: scroll; 
+}
+
+nav::-webkit-scrollbar {
+    display: none;              /* for Chrome, Safari, and Opera */
+}
+
+nav ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+nav ul li {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+nav ul li:hover {
+    background-color: var(--borders);
+    cursor: pointer;
+}
+
+ul a {
+    color: inherit;
+    font-style: inherit;
+    text-decoration: none;
+}
+
+.selected {
+    background-color: var(--borders);
+    font-weight: bold;
+}
+
+.extension {
+    color: var(--text-options);
+}
+
+.spacer {
+    height: 2em;
+}
+
+.double-spacer {
+    height: 2em;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+    padding-left: 1.8em;
+    padding-right: 2.5em;
+    padding-top: 1.8em;
+    padding-bottom: 1.8em;
+    counter-reset: line;
+    overflow: scroll;
+    -ms-overflow-style: none;   /* for Internet Explorer, Edge */
+    scrollbar-width: none;      /* for Firefox */
+    overflow-y: scroll; 
+}
+
+main::-webkit-scrollbar {
+    display: none;              /* for Chrome, Safari, and Opera */
+}
+
+
+/* scrollbar-width: thin;
+scrollbar-color: var(--borders) rgba(0,0,0,0);
+}
+
+*::-webkit-scrollbar {
+width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+background-color: var(--borders);
+border-radius: 20px;
+border: 0;
+} */
+
+.main-content {
+    width: 100%;
+}
+
+
+main h2 {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--blue);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    counter-increment: line;
+    display: flex;
+}
+
+main p,
+main .spacer {
+    counter-increment: line;
+    display: flex;
+}
+
+main h2:before,
+main p:before,
+main .spacer:before {
+    content: counter(line);
+    display: inline-block;
+    width: 2em;
+    text-align: right;
+    padding-right: 2em;
+    color: var(--numbers);
+    font-weight: normal;
+    display: inline-block;
+    flex: 0 0 auto;
+}
+
+main h2:hover,
+main p:hover,
+main .spacer:hover {
+    background-color: var(--selection);
+}
+
+p {
+    margin: 0;
+}
+  
+::selection, ::-moz-selection {
+    background: var(--text-options);
+}
+
+.element-left {
+    min-width: 11em;
+}
+
+.skill-left {
+    min-width: 8em;
+}
+
+.skill-bar {
+    min-width: 6.2em;
+    display: inline-block;
+}
+
+.skill-column {
+    float: left;
+    width: 33.5em;
+}
+
+.skill-column-dx {
+    min-width: 31em;
+    width: calc(100% - 33.5em);
+}
+  
+/* Clear floats after the columns */
+.skill-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.bottom-spacer {
+    height: 66vh;
+}
+
+
+/* trovare soluzione migliore, per ora va bene così */
+@media only screen and (min-width: 85.5em) {
+    .skill-column-dx p:before,
+    .skill-column-dx .spacer:before{
+        content: none;
+    }
+
+    .skill-column-dx p,
+    .skill-column-dx .spacer {
+        counter-increment: none;
+    }
+
+    .skill-column-dx .element-left {
+        padding-left: 2.5em;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    nav {
+        display: none;
+    }
+
+    .options-container {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    nav {
+        display: none;
+    }
+
+    .options-container {
+        display: none;
+    }
+
+    body {
+        font-size: 10px;
+    }
+}
