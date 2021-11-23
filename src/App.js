@@ -13,6 +13,8 @@ class App extends Component {
   constructor (props) {
     super(props);
 
+    this.toggleLanguage = this.toggleLanguage.bind(this);
+
     this.state = {
       currentPage: this.getCurrentPage(props.parameters),
       lang: 'en'
@@ -43,6 +45,18 @@ class App extends Component {
       return 'notFound'
     }
     return nameStripped
+  }
+
+
+  toggleLanguage() {
+    var currentLang = this.state.lang
+    if (currentLang === 'en') {
+      var newLang = 'it'
+    }
+    else {
+      var newLang = 'en'
+    }
+    this.setState({lang: newLang})
   }
 
 
@@ -104,8 +118,8 @@ class App extends Component {
               <div>
                 <span className="icon">&#xfa93;</span> <span>dark theme</span>
               </div>
-              <div>
-                <span className="icon">&#xf6e6;</span> <span>english</span>
+              <div class='option' onClick={this.toggleLanguage}>
+                <span className="icon">&#xf6e6;</span> <span>{ this.state.lang==='en' ? ( 'english' ) : ( 'italiano' ) }</span>
               </div>
             </div>
           </div>

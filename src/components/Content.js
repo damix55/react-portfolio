@@ -24,6 +24,10 @@ class Content extends Component {
 
             this.fetchData(this.props.name)
         }
+
+        if (prevProps.lang !== this.props.lang) {
+            this.setState({lang: this.props.lang})
+        }
     }
     
     
