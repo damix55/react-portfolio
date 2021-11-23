@@ -23,7 +23,7 @@ class App extends Component {
 
 
   componentDidUpdate = (prevProps) => {
-    if (prevProps.parameters.id !== this.props.parameters.id) {
+    if (prevProps.parameters !== this.props.parameters) {
       this.setState({
         currentPage: this.getCurrentPage(this.props.parameters),
       })
