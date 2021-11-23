@@ -13,28 +13,28 @@ class App extends Component {
   constructor (props) {
     super(props);
 
-    this.updateCurrentPage = this.updateCurrentPage.bind(this);
-
-    if (props.parameters === undefined) {
-      var currentPage = 'home'
-    }
-    else {
-      var currentPage = this.getCurrentPage(props.parameters.id)
-    }
-
     this.state = {
-      currentPage: currentPage,
+      currentPage: this.getCurrentPage(props.parameters),
       lang: 'en'
     }
   }
 
 
-  updateCurrentPage(page) {
-    this.setState({currentPage: this.getCurrentPage(page)})
+  componentDidUpdate = (prevProps) => {
+    if (prevProps.parameters.id !== this.props.parameters.id) {
+      this.setState({
+        currentPage: this.getCurrentPage(this.props.parameters),
+      })
+    }
+    
   }
 
 
-  getCurrentPage(name) {
+  getCurrentPage(parameters) {
+    if (parameters.id === undefined) {
+      return 'home'
+    }
+    var name = parameters.id
     var validPages = ['home', 'projects']
     var nameStripped = name.substring(0, name.length-5)
     console.log(nameStripped)
@@ -119,7 +119,6 @@ class App extends Component {
                 icon={'\uf7db'}
                 iconColor='yellow'
                 currentPage={this.state.currentPage}
-                handle={this.updateCurrentPage}
               />
               <NavEntry 
                 title='projects'
@@ -127,7 +126,6 @@ class App extends Component {
                 icon={'\uf670'}
                 iconColor='green'
                 currentPage={this.state.currentPage}
-                handle={this.updateCurrentPage}
               />
               <NavEntry 
                 title='blog'
@@ -135,7 +133,6 @@ class App extends Component {
                 icon={'\uf894'}
                 iconColor='cyan'
                 currentPage={this.state.currentPage}
-                handle={this.updateCurrentPage}
               />
               <NavEntry 
                 title='contacts'
@@ -143,7 +140,6 @@ class App extends Component {
                 icon={'\uf867'}
                 iconColor='blue'
                 currentPage={this.state.currentPage}
-                handle={this.updateCurrentPage}
               />
               <div className="spacer"></div>
               <a href="#">
