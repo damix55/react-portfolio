@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  useParams
 } from "react-router-dom";
 import App from './App';
 
@@ -12,11 +13,17 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <Router>
     <Routes>
+      <Route path=":id" element={<AppWrapper />} />
       <Route path="*" element={<App />} />
     </Routes>
   </Router>,
   document.getElementById('root')
 );
+
+
+function AppWrapper() {
+  return <App parameters={useParams()} />
+}
 
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,14 +1,8 @@
 import React, { Component } from "react";
 
+// Components
 import NavEntry from './components/NavEntry'
-import { Routes,  Route, } from "react-router-dom";
-
-// Pages
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import Blog from './pages/Blog';
-import Contacts from './pages/Contacts';
-import NotFound from './pages/NotFound';
+import Content from './components/Content';
 
 // Style
 import './assets/css/style.css';
@@ -20,11 +14,32 @@ class App extends Component {
     super(props);
 
     this.updateCurrentPage = this.updateCurrentPage.bind(this);
-  
+
+    var validPages = ['home', 'projects']
+
+    if (props.parameters === undefined) {
+      var currentPage = 'home'
+    }
+    else {
+      var currentPage = props.parameters.id
+      var currentPageStripped = currentPage.substring(0, currentPage.length-5)
+      console.log(currentPageStripped)
+
+      if (!currentPage.endsWith('.html') || !validPages.includes(currentPageStripped)) {
+        currentPage = 'notFound'
+      }
+      else {
+        currentPage = currentPageStripped
+      }
+      
+    }
+
     this.state = {
-      currentPage: ''
+      currentPage: currentPage,
+      lang: 'en'
     }
   }
+
 
   updateCurrentPage(page) {
     this.setState({currentPage: page})
@@ -72,6 +87,7 @@ class App extends Component {
     subtitle.fontSize = 1.5 * scaleFactor + "em"
   }
 
+
   render() {
     return (
       <div className="main-container">
@@ -103,6 +119,7 @@ class App extends Component {
                 icon={'\uf7db'}
                 iconColor='yellow'
                 currentPage={this.state.currentPage}
+                handle={this.updateCurrentPage}
               />
               <NavEntry 
                 title='projects'
@@ -110,6 +127,7 @@ class App extends Component {
                 icon={'\uf670'}
                 iconColor='green'
                 currentPage={this.state.currentPage}
+                handle={this.updateCurrentPage}
               />
               <NavEntry 
                 title='blog'
@@ -117,6 +135,7 @@ class App extends Component {
                 icon={'\uf894'}
                 iconColor='cyan'
                 currentPage={this.state.currentPage}
+                handle={this.updateCurrentPage}
               />
               <NavEntry 
                 title='contacts'
@@ -124,6 +143,7 @@ class App extends Component {
                 icon={'\uf867'}
                 iconColor='blue'
                 currentPage={this.state.currentPage}
+                handle={this.updateCurrentPage}
               />
               <div className="spacer"></div>
               <a href="#">
@@ -144,32 +164,7 @@ class App extends Component {
             </ul>
           </nav>
           <main id="main" onScroll={this.shrinkHeader}>
-            <Routes>
-              <Route
-                path="/"
-                element={<Home handle={this.updateCurrentPage} />}
-              />
-              <Route
-                path="/home.html"
-                element={<Home handle={this.updateCurrentPage} />}
-              />
-              <Route
-                exact path="/projects.html"
-                element={<Projects handle={this.updateCurrentPage} />}
-              />
-              <Route
-                exact path="/blog.html"
-                element={<Blog handle={this.updateCurrentPage} />}
-              />
-              <Route
-                exact path="/contacts.html"
-                element={<Contacts handle={this.updateCurrentPage} />}
-              />
-              <Route
-                exact path="*"
-                element={<NotFound />}
-              />
-            </Routes>
+            <Content name={this.state.currentPage} lang={this.state.lang} />
           </main>
         </div>
       </div>

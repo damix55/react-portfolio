@@ -1,0 +1,150 @@
+# Widgets:
+# block (title, content)
+# text
+# exp (start, end, title, at)
+# skills (title, icon, elements(title, value))
+# space
+
+# Formatting:
+# <y>...</y>  Yellow
+# <g>...</g>  Green
+# <c>...</c>  Cyan
+# <b>...</b>  Blue
+# <m>...</m>  Magenta
+# <r>...</r>  Red
+# Capital letter for bold
+
+title: Home
+content:
+############################################################
+# ABOUT ME                                                 #
+############################################################
+- block:
+    title:
+        en: about me
+        it: chi sono
+    content:
+    - text:
+        en: Hi! My name is <M>Damiano</M>. I’m a 24-year-old <G>developer</G> based in <Y>Milan, IT</Y>.
+        it: Ciao! Mi chiamo <M>Damiano</M>. Sono uno <G>sviluppatore</G> di 24 anni con sede a <Y>Milano, IT</Y>.
+
+    - space: 1
+
+############################################################
+# EDUCATION                                                #
+############################################################
+- block:
+    title:
+      en: education
+      it: istruzione
+    content:
+    - exp:
+        start: 2019
+        end: 2022
+        title:
+          en: "<R>Master's Degree</R> in <G>Computer Science</G>"
+          it: "<R>Laurea Magistrale</R> in <G>Informatica</G>"
+        at: Università degli Studi di Milano-Bicocca
+    
+    - exp:
+        start: 2016
+        end: 2019
+        title:
+          en: "<R>Bachelor's Degree</R> in <G>Computer Science</G>"
+          it: "<R>Laurea Triennale</R> in <G>Informatica</G>"
+        at: Università degli Studi di Milano-Bicocca
+
+    - exp:
+        start: 2011
+        end: 2016
+        title:
+          en: "<R>High School Diploma</R>"
+          it: "<R>Diploma di istruzione secondaria superiore</R>"
+        at: Liceo Scientifico Statale "Leonardo da Vinci" - Milano
+
+############################################################
+# WORK EXPERIENCE                                          #
+############################################################
+- block:
+    title:
+      en: work experience
+      it: esperienza lavorativa
+    content:
+    - exp:
+        start: 2017
+        end: 2018
+        title: "<R>Rider</R>"
+        at: Uber Eats
+
+############################################################
+# SKILLS                                                   #
+############################################################
+- block:
+    title:
+        en: skills
+        it: abilità
+    content:
+    - skills:
+        - title:
+            en: Programming
+            it: Programmazione
+          icon: f121
+          elements:
+            - title: Python
+              value: 10
+            - title: Javascript
+              value: 7
+            - title: Java
+              value: 7
+            - title: C/C++
+              value: 6
+
+        - title: OS
+          icon: fcbe
+          elements:
+            - title: Windows
+              value: 10
+            - title: Linux
+              value: 8
+
+        - title:
+            en: Languages
+            it: Lingue
+          icon: f6e6
+          elements:
+            - title:
+                en: Italian
+                it: Italiano
+              value:
+                en: native
+                it: Madrelingua
+            - title:
+                en: English
+                it: Inglese
+              value: C1
+
+        - title: Database
+          icon: f6b7
+          elements:
+            - title: MongoDB
+              value: 6
+            - title: SQL
+              value: 5
+
+        - title:
+            en: Technologies
+            it: Tecnologie
+          icon: e702
+          elements:
+            - title: Docker
+              value: 8
+            - title: Git
+              value: 7
+
+        - title: Web dev
+          icon: fa9e
+          elements:
+            - title: HTML
+              value: 9
+            - title: CSS
+              value: 8

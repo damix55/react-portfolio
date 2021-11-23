@@ -1,0 +1,11 @@
+title: Not Found
+content:
+
+- block:
+    title:
+        en: 'page not found'
+        it: 'pagina non trovata'
+    content:
+    - text:
+        en: error 404
+        it: errore 404
