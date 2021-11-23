@@ -31,7 +31,7 @@ class App extends Component {
 
 
   getCurrentPage(parameters) {
-    if (parameters.id === undefined) {
+    if (parameters === undefined) {
       return 'home'
     }
     var name = parameters.id
