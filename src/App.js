@@ -1,5 +1,8 @@
 // Libraries
 import React, { Component } from "react";
+import { instanceOf } from 'prop-types';
+import { withCookies, Cookies } from 'react-cookie';
+import detectBrowserLanguage from 'detect-browser-language'
 
 // Components
 import NavEntry from './components/NavEntry'
@@ -11,14 +14,36 @@ import './assets/css/fonts.css';
 
 
 class App extends Component {
+  static propTypes = {
+    cookies: instanceOf(Cookies).isRequired
+  };
+
   constructor (props) {
     super(props);
+    const { cookies } = props;
+
+    var lang = cookies.get('lang')
+
+    if (!lang) {
+      lang = detectBrowserLanguage().substring(0,2)
+      if (lang) {
+        lang = lang.substring(0,2)
+        if (lang !== 'it') {
+          lang = 'en'
+        }
+      }
+      else {
+        lang = 'en'
+      }
+      
+      cookies.set('lang', lang, { path: '/' });
+    }
 
     this.toggleLanguage = this.toggleLanguage.bind(this);
 
     this.state = {
       currentPage: this.getCurrentPage(props.parameters['*']),
-      lang: 'en'
+      lang: lang
     }
   }
 
@@ -38,7 +63,7 @@ class App extends Component {
     if (name === '' || name === undefined) {
       return 'home'
     }
-    var validPages = ['home', 'projects']
+    var validPages = ['home', 'projects', 'blog', 'contacts']
     var nameStripped = name.substring(0, name.length-5)
     console.log(nameStripped)
 
@@ -51,13 +76,16 @@ class App extends Component {
 
   toggleLanguage() {
     var currentLang = this.state.lang
-    if (currentLang === 'en') {
+    if (currentLang !== 'it') {
       var newLang = 'it'
     }
     else {
       var newLang = 'en'
     }
     this.setState({lang: newLang})
+
+    const { cookies } = this.props;
+    cookies.set('lang', newLang, { path: '/' });
   }
 
 
@@ -68,9 +96,8 @@ class App extends Component {
 
     var position = document.getElementById('main').scrollTop;
 
-    console.log(position)
-
     // clear height from autoscrolling
+    // causes minor glitches on short pages on Chrome
     if (position < 100) {
       var mainContent = document.getElementsByClassName('main-content')[0]
       var main = document.getElementById('main')
@@ -192,4 +219,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withCookies(App);

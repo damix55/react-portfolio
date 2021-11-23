@@ -1,0 +1,9 @@
+title: Blog
+content:
+
+- block:
+    title:
+        en: blog
+        it: blog
+    content:
+    - text: work in progess
