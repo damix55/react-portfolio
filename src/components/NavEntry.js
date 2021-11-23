@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const NavEntry = (props) => {
 
     function updateCurrentPage() {
-        props.handle(props.title)
+        props.handle(`${ props.title }.${ props.extension }`)
     }
 
     return (

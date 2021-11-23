@@ -16,8 +16,9 @@ class Content extends Component {
 
     
     componentDidUpdate = (prevProps) => {
-        if (prevProps.name !== this.name) {
+        if (prevProps.name !== this.props.name) {
             this.fetchData(this.props.name)
+            console.log(this.props.name)
         }
     }
     

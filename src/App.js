@@ -15,23 +15,11 @@ class App extends Component {
 
     this.updateCurrentPage = this.updateCurrentPage.bind(this);
 
-    var validPages = ['home', 'projects']
-
     if (props.parameters === undefined) {
       var currentPage = 'home'
     }
     else {
-      var currentPage = props.parameters.id
-      var currentPageStripped = currentPage.substring(0, currentPage.length-5)
-      console.log(currentPageStripped)
-
-      if (!currentPage.endsWith('.html') || !validPages.includes(currentPageStripped)) {
-        currentPage = 'notFound'
-      }
-      else {
-        currentPage = currentPageStripped
-      }
-      
+      var currentPage = this.getCurrentPage(props.parameters.id)
     }
 
     this.state = {
@@ -42,7 +30,19 @@ class App extends Component {
 
 
   updateCurrentPage(page) {
-    this.setState({currentPage: page})
+    this.setState({currentPage: this.getCurrentPage(page)})
+  }
+
+
+  getCurrentPage(name) {
+    var validPages = ['home', 'projects']
+    var nameStripped = name.substring(0, name.length-5)
+    console.log(nameStripped)
+
+    if (!name.endsWith('.html') || !validPages.includes(nameStripped)) {
+      return 'notFound'
+    }
+    return nameStripped
   }
 
 
