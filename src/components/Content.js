@@ -17,11 +17,6 @@ class Content extends Component {
     
     componentDidUpdate = (prevProps) => {
         if (prevProps.name !== this.props.name) {
-            var main = document.getElementById('main')
-            main.scroll({top: 0, left: 0, behavior: 'smooth'})
-
-            // TODO: wait dello scroll prima di caricare gli elementi
-
             this.fetchData(this.props.name)
         }
 

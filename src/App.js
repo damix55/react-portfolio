@@ -1,3 +1,4 @@
+// Libraries
 import React, { Component } from "react";
 
 // Components
@@ -16,27 +17,27 @@ class App extends Component {
     this.toggleLanguage = this.toggleLanguage.bind(this);
 
     this.state = {
-      currentPage: this.getCurrentPage(props.parameters),
+      currentPage: this.getCurrentPage(props.parameters['*']),
       lang: 'en'
     }
   }
 
 
   componentDidUpdate = (prevProps) => {
-    if (prevProps.parameters !== this.props.parameters) {
+    if (prevProps.parameters['*'] !== this.props.parameters['*']) {
       this.setState({
-        currentPage: this.getCurrentPage(this.props.parameters),
+        currentPage: this.getCurrentPage(this.props.parameters['*']),
       })
     }
     
   }
 
 
-  getCurrentPage(parameters) {
-    if (parameters === undefined) {
+  getCurrentPage(name) {
+    console.log(name)
+    if (name === '' || name === undefined) {
       return 'home'
     }
-    var name = parameters.id
     var validPages = ['home', 'projects']
     var nameStripped = name.substring(0, name.length-5)
     console.log(nameStripped)
@@ -66,6 +67,15 @@ class App extends Component {
     }
 
     var position = document.getElementById('main').scrollTop;
+
+    console.log(position)
+
+    // clear height from autoscrolling
+    if (position < 100) {
+      var mainContent = document.getElementsByClassName('main-content')[0]
+      var main = document.getElementById('main')
+      mainContent.style.height = null
+    }
 
     var breakingPoint = 200;
 

@@ -6,6 +6,8 @@ import {
   Route,
   useParams
 } from "react-router-dom";
+import { CookiesProvider } from 'react-cookie';
+
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
@@ -13,8 +15,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <Router>
     <Routes>
-      <Route path=":id" element={<AppWrapper />} />
-      <Route path="*" element={<App />} />
+      <Route path="*" element={<AppWrapper />} />
     </Routes>
   </Router>,
   document.getElementById('root')
@@ -22,7 +23,11 @@ ReactDOM.render(
 
 
 function AppWrapper() {
-  return <App parameters={useParams()} />
+  return (
+    <CookiesProvider>
+      <App parameters={useParams()} />
+    </CookiesProvider>
+  )
 }
 
 
