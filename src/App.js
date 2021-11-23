@@ -22,6 +22,7 @@ class App extends Component {
     super(props);
     const { cookies } = props;
 
+    // language
     var lang = cookies.get('lang')
 
     if (!lang) {
@@ -39,11 +40,22 @@ class App extends Component {
       cookies.set('lang', lang, { path: '/' });
     }
 
+    // theme
+    var theme = cookies.get('theme')
+
+    if (!theme) {
+      theme = 'dark';
+    }
+    
+    this.setTheme(theme)
+
     this.toggleLanguage = this.toggleLanguage.bind(this);
+    this.toggleTheme = this.toggleTheme.bind(this);
 
     this.state = {
       currentPage: this.getCurrentPage(props.parameters['*']),
-      lang: lang
+      lang: lang,
+      theme: theme
     }
   }
 
@@ -59,13 +71,11 @@ class App extends Component {
 
 
   getCurrentPage(name) {
-    console.log(name)
     if (name === '' || name === undefined) {
       return 'home'
     }
     var validPages = ['home', 'projects', 'blog', 'contacts']
     var nameStripped = name.substring(0, name.length-5)
-    console.log(nameStripped)
 
     if (!name.endsWith('.html') || !validPages.includes(nameStripped)) {
       return 'notFound'
@@ -75,8 +85,7 @@ class App extends Component {
 
 
   toggleLanguage() {
-    var currentLang = this.state.lang
-    if (currentLang !== 'it') {
+    if (this.state.lang !== 'it') {
       var newLang = 'it'
     }
     else {
@@ -87,6 +96,34 @@ class App extends Component {
     const { cookies } = this.props;
     cookies.set('lang', newLang, { path: '/' });
   }
+
+
+
+  toggleTheme() {
+    if (this.state.theme !== 'light') {
+      var newTheme = 'light'
+    }
+    else {
+      var newTheme = 'dark'
+    }
+
+    this.setTheme(newTheme)
+  }
+
+
+  setTheme(theme) {
+    if (theme === 'dark') {
+      document.body.classList.remove('light-mode')
+    }
+    else {
+      document.body.classList.add('light-mode')
+    }
+    this.setState({theme: theme})
+
+    // const { cookies } = this.props;
+    // cookies.set('theme', newTheme, { path: '/' });
+  }
+  
 
 
   shrinkHeader() {
@@ -152,8 +189,8 @@ class App extends Component {
           </div>
           <div className="options-container">
             <div>
-              <div>
-                <span className="icon">&#xfa93;</span> <span>dark theme</span>
+              <div class='option' onClick={this.toggleTheme}>
+                <span className="icon">&#xfa93;</span> <span>{ this.state.theme } theme</span>
               </div>
               <div class='option' onClick={this.toggleLanguage}>
                 <span className="icon">&#xf6e6;</span> <span>{ this.state.lang==='en' ? ( 'english' ) : ( 'italiano' ) }</span>
