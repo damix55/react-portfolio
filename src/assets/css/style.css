@@ -1,44 +1,48 @@
 :root {
     /* one dark */
-    --background:   #22252C;
-    --selection:    #262a31;
-    --black:        #282C34;
-    --borders:      #30353F;
-    --numbers:      #393F4B;
-    --text-options: #4B5263;
-    --text:         #ABB2BF;
-    --title:        #FFFFFF;
-    --blue:         #61AFEF;
-    --cyan:         #56B6C2;
-    --green:        #98C379;
-    --yellow:       #D19A66;
-    --red:          #E06C75;
-    --magenta:      #C678DD;
+    --background:    #22252C;
+    --selection:     #262a31;
+    --black:         #282C34;
+    --borders:       #30353F;
+    --numbers:       #393F4B;
+    --text-options : #4B5263;
+    --text-extension:#4B5263;
+    --text:          #ABB2BF;
+    --title:         #FFFFFF;
+    --subtitle:      #ABB2BF;
+    --blue:          #61AFEF;
+    --cyan:          #56B6C2;
+    --green:         #98C379;
+    --yellow:        #D19A66;
+    --red:           #E06C75;
+    --magenta:       #C678DD;
 
     --font-monospace:       'Fira Code', monospace;
     --font-sans-serif:      'Fira Sans', sans-serif;
     --font-icons:           'Fira Code Nerd Font';
-    --font-size:            14px
+    --font-size:            14px;
+    --line-height:          1.8em;
 }
 
 
 /* tomorrow light */
 .light-mode {
-    --black:        #ffffff;
-    --background:   #ffffff;
-    --selection:    #fcfcfc;
-    --borders:      #f2f2f2;
-    --numbers:      #e0e0e0;
-    --text-options: #c3c3c3;
-
-    --text:         #373b41;
-    --title:        #1d1f21;
-    --blue:         #81a2be;
-    --cyan:         #8abeb7;
-    --green:        #b5bd68;
-    --yellow:       #f0c674;
-    --red:          #cc6666;
-    --magenta:      #b294bb;
+    --black:         #ffffff;
+    --background:    #ffffff;
+    --selection:     #f9f9f9;
+    --borders:       #f2f2f2;
+    --numbers:       #e0e0e0;
+    --text-options:  rgba(0,0,0,0.4);
+    --text-extension: rgba(0,0,0,0.2);
+    --text:          #373b41;
+    --title:         #22252C;
+    --subtitle:      rgba(0,0,0,0.8);
+    --blue:          #81a2be;
+    --cyan:          #8abeb7;
+    --green:         #b5bd68;
+    --yellow:        #f0c674;
+    --red:           #cc6666;
+    --magenta:       #b294bb;
 }
 
 
@@ -67,16 +71,19 @@
 }
 
 .bold {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 
 body {
     font-family: var(--font-monospace);
+    font-weight: 400;
     font-size: var(--font-size);
     background-color: var(--background);
     color: var(--text);
     margin: 0;
+    height: 100vh;
+    font-smooth: always;
 }
 
 html, body {
@@ -120,6 +127,7 @@ h1 {
     font-size: 1.5em;
     font-family: var(--font-sans-serif);
     font-weight: bold;
+    color: var(--subtitle)
 }
 
 .avatar {
@@ -140,6 +148,11 @@ h1 {
 
 .option {
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.option:hover {
+    color: var(--text);
 }
 
 .icon {
@@ -148,6 +161,7 @@ h1 {
     position: relative;
     top: 0.07em;
     font-family: var(--font-icons);
+    font-weight: 400;
 }
 
 .content-container {
@@ -157,8 +171,9 @@ h1 {
     box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.05);
     -webkit-box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.05);
     display: flex;
-    line-height: 2em;
+    line-height: var(--line-height);
     height: calc(100vh - 18.5em);
+    min-height: 200px;
 }
 
 nav {
@@ -171,6 +186,7 @@ nav {
     -ms-overflow-style: none;   /* for Internet Explorer, Edge */
     scrollbar-width: none;      /* for Firefox */
     overflow-y: scroll; 
+    line-height: 2em;
 }
 
 nav::-webkit-scrollbar {
@@ -186,6 +202,7 @@ nav ul {
 nav ul li {
     padding-left: 2.5em;
     padding-right: 2.5em;
+    transition: 0.3s;
 }
 
 nav ul li:hover {
@@ -205,15 +222,11 @@ ul a {
 }
 
 .extension {
-    color: var(--text-options);
+    color: var(--text-extension);
 }
 
 .spacer {
-    height: 2em;
-}
-
-.double-spacer {
-    height: 2em;
+    height: var(--line-height);
 }
 
 main {
@@ -227,6 +240,7 @@ main {
     overflow: scroll;
     -ms-overflow-style: none;   /* for Internet Explorer, Edge */
     scrollbar-width: none;      /* for Firefox */
+    overflow-x: hidden;
 }
 
 main::-webkit-scrollbar {
@@ -273,7 +287,6 @@ main h2:before,
 main p:before,
 main .spacer:before {
     content: counter(line);
-    display: inline-block;
     width: 2em;
     text-align: right;
     padding-right: 2em;
@@ -359,6 +372,7 @@ p {
     }
 }
 
+/* mobile view */
 @media only screen and (max-width: 800px) {
     nav {
         display: none;
@@ -368,7 +382,57 @@ p {
         display: none;
     }
 
-    body {
-        font-size: 10px;
+    .main-container {
+        width: 95%;
+    }
+
+    main h2:before,
+    main p:before,
+    main .spacer:before {
+        width: 1em;
+        padding-right: 2em;
+    }
+
+    main {
+        padding-left: 0.9em;
+        padding-right: 0.9em;
+    }
+
+    /* h1 {
+        font-size: 2em;
+    }
+
+    .avatar {
+        height: 6.5em;
+        min-width: 6.5em;
+    }
+
+    header {
+        padding: 1em;
+        height: 6.5em;
+    }
+
+    .title-container {
+        padding-left: 2em;
+        padding-right: 2em;
+    } */
+
+    main h2:hover,
+    main p:hover,
+    main .spacer:hover {
+        background-color: transparent;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .skill-column {
+        width: 100%;
+    }
+    
+    .skill-column-dx {
+        min-width: 0;
+    }
+    .skill-left {
+        flex-grow: 1;
     }
 }

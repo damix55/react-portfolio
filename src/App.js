@@ -120,10 +120,9 @@ class App extends Component {
     }
     this.setState({theme: theme})
 
-    // const { cookies } = this.props;
-    // cookies.set('theme', newTheme, { path: '/' });
+    const { cookies } = this.props;
+    cookies.set('theme', theme, { path: '/' });
   }
-  
 
 
   shrinkHeader() {
