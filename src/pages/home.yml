@@ -28,7 +28,7 @@ content:
         en: Hi! My name is <M>Damiano</M>. I’m a 24-year-old <G>developer</G> based in <Y>Milan, IT</Y>.
         it: Ciao! Mi chiamo <M>Damiano</M>. Sono uno <G>sviluppatore</G> di 24 anni con sede a <Y>Milano, IT</Y>.
 
-    - space: 1
+    - space: 2
 
 ############################################################
 # EDUCATION                                                #
@@ -62,7 +62,7 @@ content:
           it: "<R>Diploma di istruzione secondaria superiore</R>"
         at: Liceo Scientifico Statale "Leonardo da Vinci" - Milano
 
-    - space: 2
+    - space: 1
 
 ############################################################
 # WORK EXPERIENCE                                          #
