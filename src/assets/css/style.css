@@ -341,7 +341,7 @@ p {
 }
 
 .bottom-spacer {
-    height: 66vh;
+    height: 60vh;
 }
 
 
@@ -374,6 +374,10 @@ p {
 
 /* mobile view */
 @media only screen and (max-width: 800px) {
+    body {
+        font-size: 14px;
+    }
+
     nav {
         display: none;
     }
@@ -389,13 +393,13 @@ p {
     main h2:before,
     main p:before,
     main .spacer:before {
-        width: 1em;
-        padding-right: 2em;
+        width: 1.5em;
+        padding-right: 1.5em;
     }
 
     main {
-        padding-left: 0.9em;
-        padding-right: 0.9em;
+        padding-left: 1em;
+        padding-right: 1em;
     }
 
     /* h1 {
@@ -422,6 +426,10 @@ p {
     main .spacer:hover {
         background-color: transparent;
     }
+
+    .bottom-spacer {
+        height: 0;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -434,5 +442,11 @@ p {
     }
     .skill-left {
         flex-grow: 1;
+    }
+
+    main h2:before,
+    main p:before,
+    main .spacer:before {
+        display: none;
     }
 }

@@ -61,7 +61,6 @@ const Block = (props) => {
                     return getComponent(c, props.lang);
                 })}
             </section>
-            <div className="spacer"></div>
         </div>
     )
 }

@@ -62,6 +62,8 @@ content:
           it: "<R>Diploma di istruzione secondaria superiore</R>"
         at: Liceo Scientifico Statale "Leonardo da Vinci" - Milano
 
+    - space: 1
+
 ############################################################
 # WORK EXPERIENCE                                          #
 ############################################################
@@ -75,6 +77,8 @@ content:
         end: 2018
         title: "<R>Rider</R>"
         at: Uber Eats
+
+    - space: 1
 
 ############################################################
 # SKILLS                                                   #
