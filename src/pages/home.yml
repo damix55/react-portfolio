@@ -25,8 +25,8 @@ content:
         it: chi sono
     content:
     - text:
-        en: Hi! My name is <M>Damiano</M>. I’m a 24-year-old <G>developer</G> based in <Y>Milan, IT</Y>.
-        it: Ciao! Mi chiamo <M>Damiano</M>. Sono uno <G>sviluppatore</G> di 24 anni con sede a <Y>Milano, IT</Y>.
+        en: Hi! My name is <M>Damiano</M>. I’m a {{ age }}-year-old <G>developer</G> based in <Y>Milan, IT</Y>.
+        it: Ciao! Mi chiamo <M>Damiano</M>. Sono uno <G>sviluppatore</G> di {{ age }} anni con sede a <Y>Milano, IT</Y>.
 
     - space: 2
 
