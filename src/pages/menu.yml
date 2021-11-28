@@ -1,0 +1,33 @@
+pages:
+  - name: home
+    icon: f7db
+    color: yellow
+
+  - name: projects
+    icon: f670
+    color: green
+
+  - name: blog
+    icon: f894
+    color: cyan
+
+  - name: contacts
+    icon: f867
+    color: blue
+
+
+links:
+  - name: linkedin
+    href: https://www.linkedin.com/in/damiano-emanuele-dovico-8b5a63197/
+    icon: f83b
+    color: blue
+
+  - name: github
+    href: https://github.com/damix55
+    icon: f7a2
+    color: magenta
+
+  - name: email
+    href: /
+    icon: f6ed
+    color: yellow

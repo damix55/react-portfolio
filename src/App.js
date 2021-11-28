@@ -3,10 +3,12 @@ import React, { Component } from "react";
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 import detectBrowserLanguage from 'detect-browser-language'
+import yaml from 'js-yaml'
 
 // Components
 import NavEntry from './components/NavEntry'
 import Content from './components/Content';
+import Icon from './components/Icon'
 
 // Style
 import './assets/css/style.css';
@@ -59,8 +61,16 @@ class App extends Component {
       currentPage: this.getCurrentPage(props.parameters['*']),
       lang: lang,
       theme: theme,
-      headerInitialSize: undefined
+      headerInitialSize: undefined,
+      menuData: {}
     }
+
+    // fetch menu data
+    const menuData = require(`./pages/menu.yml`)
+    fetch(menuData.default)
+      .then(r => r.text())
+      .then(text => yaml.load(text))
+      .then(yml => this.setState({menuData: yml}));
   }
 
 
@@ -218,50 +228,35 @@ class App extends Component {
         <div className="content-container" ref={e => this.contentContainer = e}>
           <nav>
             <ul>
-              <NavEntry 
-                title='home'
-                extension='html' 
-                icon={'\uf7db'}
-                iconColor='yellow'
-                currentPage={this.state.currentPage}
-              />
-              <NavEntry 
-                title='projects'
-                extension='html' 
-                icon={'\uf670'}
-                iconColor='green'
-                currentPage={this.state.currentPage}
-              />
-              <NavEntry 
-                title='blog'
-                extension='html'
-                icon={'\uf894'}
-                iconColor='cyan'
-                currentPage={this.state.currentPage}
-              />
-              <NavEntry 
-                title='contacts'
-                extension='html' 
-                icon={'\uf867'}
-                iconColor='blue'
-                currentPage={this.state.currentPage}
-              />
+              {/* pages */}
+              { this.state.menuData.pages !== undefined &&
+                this.state.menuData.pages.map(function(p, i) {
+                  return(
+                    <NavEntry 
+                      title={p.name}
+                      extension='html' 
+                      icon={p.icon}
+                      iconColor={p.color}
+                      currentPage={this.state.currentPage}
+                      key={`nav-entry-${i}`}
+                    />
+                  )
+                }, this)
+              }
               <div className="spacer"></div>
-              <a href="/">
-                <li>
-                  <span className="icon blue">&#xf83b;</span> <span>linkedin</span>
-                </li>
-              </a>
-              <a href="/">
-                <li>
-                  <span className="icon magenta">&#xf7a2;</span> <span>github</span>
-                </li>
-              </a>
-              <a href="/">
-                <li>
-                  <span className="icon yellow">&#xf6ed;</span> <span>email</span>
-                </li>
-              </a>
+
+              {/* links */}
+              { this.state.menuData.links !== undefined &&
+                this.state.menuData.links.map(function(l, i) {
+                  return(
+                    <a href={l.href} key={`link-${i}`}>
+                      <li>
+                        <Icon hex={l.icon} color={l.color} /> <span>{l.name}</span>
+                      </li>
+                    </a>
+                  )
+                }, this)
+              }
             </ul>
           </nav>
           <main id="main" ref={e => this.main = e}>
