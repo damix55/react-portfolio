@@ -85,7 +85,6 @@ class App extends Component {
   }
   
 
-
   componentDidUpdate = (prevProps) => {
     if (prevProps.parameters['*'] !== this.props.parameters['*']) {
       this.setState({
@@ -162,7 +161,15 @@ class App extends Component {
       mainContent.style.height = null
     }
 
-    const shrinkAmount = 1.8
+    var shrinkAmount;
+
+    if (window.innerWidth > 500) {
+      shrinkAmount = 1.8
+    }
+    else {
+      shrinkAmount = 1.5
+    }
+    
 
     const shrinkFactor = 1/shrinkAmount
     const breakingPoint = this.state.headerInitialHeight * (1-shrinkFactor);
@@ -183,7 +190,7 @@ class App extends Component {
     return (
       <div className="main-container">
         <header ref={e => this.header = e}>
-          <div className="avatar" ></div>
+          <div className="avatar"></div>
           <div className="title-container">
             <div>
               <h1>Damiano Dovico</h1>
@@ -199,6 +206,10 @@ class App extends Component {
                 <span className="icon">&#xf6e6;</span> <span>{ this.state.lang==='en' ? ( 'english' ) : ( 'italiano' ) }</span>
               </div>
             </div>
+          </div>
+          <Sidebar pageWrapId={"main-content"} outerContainerId={"App"} />
+          <div className="hamburger">
+            <div className="menu-icon icon">&#xf85b;</div>
           </div>
         </header>
         <div className="content-container" ref={e => this.contentContainer = e}>
