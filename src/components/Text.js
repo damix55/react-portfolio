@@ -1,5 +1,11 @@
 import React from 'react'
 import parse from 'html-react-parser';
+import moment from 'moment';
+
+function getAge() {
+    var birthday = '1997-04-29'
+    return moment().diff(birthday, 'years');
+}
 
 function formatText(text) {
     var tagToClass = {
@@ -25,6 +31,9 @@ function formatText(text) {
     // icons
     text = text.replaceAll('<i>', '<span className="icon">&#x');
     text = text.replaceAll('</i>',';</span>');
+
+    // variables
+    text = text.replaceAll('{{ age }}', getAge())
     return parse(text);
 }
  

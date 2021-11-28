@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  sample:
+  react:
     container_name: dovico.dev
     build:
       context: .
@@ -8,6 +8,8 @@ services:
     volumes:
       - './public:/app/public'
       - './src:/app/src'
+      - './package.json:/app/package.json'
+      - './package-lock.json:/app/package-lock.json'
     ports:
       - 3001:3000
     environment:

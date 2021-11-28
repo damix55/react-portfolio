@@ -84,12 +84,18 @@ body {
     margin: 0;
 }
 
+html, body {
+    overflow: hidden;
+}
+
 #root {
     height: 100vh;
 }
 
-html, body {
-    overflow: hidden;
+a {
+    color: inherit;
+    font-style: inherit;
+    text-decoration: none;
 }
 
 .main-container {
@@ -225,12 +231,6 @@ nav ul li {
 nav ul li:hover {
     background-color: var(--borders);
     cursor: pointer;
-}
-
-ul a {
-    color: inherit;
-    font-style: inherit;
-    text-decoration: none;
 }
 
 .selected {

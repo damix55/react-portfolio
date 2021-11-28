@@ -28,6 +28,7 @@ class App extends Component {
     this.toggleLanguage = this.toggleLanguage.bind(this);
     this.toggleTheme = this.toggleTheme.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
+    this.scrollOnTop = this.scrollOnTop.bind(this);
 
     // language
     var lang = cookies.get('lang')
@@ -200,6 +201,16 @@ class App extends Component {
   }
 
 
+  scrollOnTop() {
+    var mainContent = this.mainContent
+    var height = mainContent.scrollHeight
+
+    mainContent.style.height = height + 'px'
+    
+    this.main.scroll({top: 0, left: 0, behavior: 'smooth'})
+}
+
+
   render() {
     return (
       <div className="main-container">
@@ -238,6 +249,7 @@ class App extends Component {
                       icon={p.icon}
                       iconColor={p.color}
                       currentPage={this.state.currentPage}
+                      scrollOnTop={this.scrollOnTop}
                       key={`nav-entry-${i}`}
                     />
                   )
