@@ -207,7 +207,6 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <Sidebar pageWrapId={"main-content"} outerContainerId={"App"} />
           <div className="hamburger">
             <div className="menu-icon icon">&#xf85b;</div>
           </div>
