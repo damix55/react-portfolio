@@ -37,7 +37,7 @@ class Content extends Component {
 
 
   render() {
-    function getBlock(component, lang) {
+    function getBlock(component, lang, index) {
       switch(Object.keys(component)[0]) {
         case 'block':
             var b = component.block
@@ -46,6 +46,7 @@ class Content extends Component {
                 title={b.title}
                 content={b.content}
                 lang={lang} 
+                key={`block-${index}`}
               />
             );
             
@@ -57,8 +58,8 @@ class Content extends Component {
     return (
       <div>
         { this.state.pageContent.content !== undefined &&
-          this.state.pageContent.content.map(function(b) {
-            return getBlock(b, this.state.lang);
+          this.state.pageContent.content.map(function(b, i) {
+            return getBlock(b, this.state.lang, i);
           }, this)
         }
       </div>

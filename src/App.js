@@ -42,7 +42,7 @@ class App extends Component {
         lang = 'en'
       }
       
-      cookies.set('lang', lang, { path: '/' });
+      cookies.set('lang', lang, { path: '/', secure: true});
     }
 
     // theme
@@ -52,7 +52,7 @@ class App extends Component {
       theme = 'dark';
     }
     
-    this.setTheme(theme)
+    this.setTheme(theme, false)
 
     // set state
     this.state = {
@@ -110,53 +110,57 @@ class App extends Component {
 
 
   toggleLanguage() {
+    var newLang;
     if (this.state.lang !== 'it') {
-      var newLang = 'it'
+      newLang = 'it'
     }
     else {
-      var newLang = 'en'
+      newLang = 'en'
     }
     this.setState({lang: newLang})
 
     const { cookies } = this.props;
-    cookies.set('lang', newLang, { path: '/' });
+    cookies.set('lang', newLang, { path: '/', secure: true});
   }
 
 
 
   toggleTheme() {
+    var newTheme
     if (this.state.theme !== 'light') {
-      var newTheme = 'light'
+      newTheme = 'light'
     }
     else {
-      var newTheme = 'dark'
+      newTheme = 'dark'
     }
 
     this.setTheme(newTheme)
   }
 
 
-  setTheme(theme) {
+  setTheme(theme, setState=true) {
     if (theme === 'dark') {
       document.body.classList.remove('light-mode')
     }
     else {
       document.body.classList.add('light-mode')
     }
-    this.setState({theme: theme})
+
+    if(setState) {
+      this.setState({theme: theme})
+    }
 
     const { cookies } = this.props;
-    cookies.set('theme', theme, { path: '/' });
+    cookies.set('theme', theme, { path: '/', secure: true});
   }
 
 
   handleScroll() {
     var position = this.main.scrollTop;
-    console.log(position)
 
     // clear height from autoscrolling
     // TODO: disable scrolling when autoscrolling
-    if (position == 0) {
+    if (position === 0) {
       var mainContent = this.mainContent
       mainContent.style.height = null
     }
@@ -199,10 +203,10 @@ class App extends Component {
           </div>
           <div className="options-container">
             <div>
-              <div class='option' onClick={this.toggleTheme}>
+              <div className='option' onClick={this.toggleTheme}>
                 <span className="icon">&#xfa93;</span> <span>{ this.state.theme } theme</span>
               </div>
-              <div class='option' onClick={this.toggleLanguage}>
+              <div className='option' onClick={this.toggleLanguage}>
                 <span className="icon">&#xf6e6;</span> <span>{ this.state.lang==='en' ? ( 'english' ) : ( 'italiano' ) }</span>
               </div>
             </div>
@@ -243,17 +247,17 @@ class App extends Component {
                 currentPage={this.state.currentPage}
               />
               <div className="spacer"></div>
-              <a href="#">
+              <a href="/">
                 <li>
                   <span className="icon blue">&#xf83b;</span> <span>linkedin</span>
                 </li>
               </a>
-              <a href="#">
+              <a href="/">
                 <li>
                   <span className="icon magenta">&#xf7a2;</span> <span>github</span>
                 </li>
               </a>
-              <a href="#">
+              <a href="/">
                 <li>
                   <span className="icon yellow">&#xf6ed;</span> <span>email</span>
                 </li>
@@ -261,7 +265,7 @@ class App extends Component {
             </ul>
           </nav>
           <main id="main" ref={e => this.main = e}>
-            <div class='main-content' ref={e => this.mainContent = e}>
+            <div className='main-content' ref={e => this.mainContent = e}>
               <div className="scroll-spacer" ref={e => this.scrollSpacer = e}></div>
                 <Content name={this.state.currentPage} lang={this.state.lang} />
               <div className="bottom-spacer"></div>

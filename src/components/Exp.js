@@ -1,11 +1,10 @@
 import React from 'react';
 import Text from './Text'
-import useWindowDimensions from './WindowDimensions'
+
 
 // start, end, title, at, lang
 const Exp = (props) => {
-    const { height, width } = useWindowDimensions();
-    var mobileView = width < 800;
+    var mobileView = window.innerWidth < 800;
 
     var years = <span className="element-left">
                     { !mobileView && <span className="bold magenta">* </span> }

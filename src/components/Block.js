@@ -5,19 +5,19 @@ import Exp from './Exp'
 import Skills from './Skills'
 
 
-function getComponent(component, lang) {
+function getComponent(component, lang, i) {
     switch(Object.keys(component)[0]) {
         case 'space':
             var spaces = []
-            for (const _ of Array(component.space).keys()) {
-                spaces.push(<div className="spacer"></div>)
+            for (const j of Array(component.space).keys()) {
+                spaces.push(<div key={`component-${i}-${j}`} className="spacer"></div>)
             }
             return spaces;
 
 
         case 'text':
             return (
-                <p>
+                <p key={`component-${i}`}>
                     <Text
                         text={component.text}
                         lang={lang}
@@ -34,6 +34,7 @@ function getComponent(component, lang) {
                     title={component.exp.title}
                     at={component.exp.at}
                     lang={lang} 
+                    key={`component-${i}`}
                 />
             );
 
@@ -41,7 +42,8 @@ function getComponent(component, lang) {
             return (
                 <Skills
                     skills={component.skills}
-                    lang={lang} 
+                    lang={lang}
+                    key={`component-${i}`}
                 />
             );
 
@@ -56,9 +58,9 @@ const Block = (props) => {
     return (
         <div>
             <section>
-                <h2>// { getTranslation(props.title, props.lang) }</h2>
-                { props.content.map(function(c) {
-                    return getComponent(c, props.lang);
+                <h2>{'//'} { getTranslation(props.title, props.lang) }</h2>
+                { props.content.map(function(c, i) {
+                    return getComponent(c, props.lang, i);
                 })}
             </section>
         </div>

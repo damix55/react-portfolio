@@ -1,20 +1,18 @@
 import React from 'react'
 import parse from 'html-react-parser'
 import Text from './Text'
-import useWindowDimensions from './WindowDimensions'
 
 
-function getSkills(skill, lang) {
+function getSkills(skill, lang, i) {
     var elements = []
     skill.elements.forEach(function (item, index) {
-        const { height, width } = useWindowDimensions();
-        var mobileView = width < 800;
+        var mobileView = window.innerWidth < 800;
 
         var elementLeft =
-            <div>
+            <span>
                 <span className="icon yellow">{parse(`&#x${skill.icon};`)}</span>{' '}
                 <span className="bold"><Text text={skill.title} lang={lang} /></span>
-            </div>
+            </span>
 
         var skillLeft =
             <span className="green skill-left">
@@ -22,11 +20,11 @@ function getSkills(skill, lang) {
             </span>
 
         var e = 
-            <div>
+            <div key={`skill-${index}`}>
                 { !mobileView &&
                     <p>
                         <span className="element-left">
-                            { index==0 && elementLeft }
+                            { index===0 && elementLeft }
                         </span>
                         { skillLeft }
                         { getSkillValue(item.value, lang)}
@@ -34,7 +32,7 @@ function getSkills(skill, lang) {
                 }
                 { mobileView && 
                     <div>
-                        { index==0 && <p>{elementLeft}</p> }
+                        { index===0 && <p>{elementLeft}</p> }
                         <p>{skillLeft} {getSkillValue(item.value, lang)}</p>
                     </div>
                 }
@@ -45,9 +43,9 @@ function getSkills(skill, lang) {
     });
 
     return (
-        <div className="elements-container">
+        <div className="elements-container" key={`element-container-${i}`}>
             { elements }
-            <div class='spacer'></div>
+            <div className='spacer'></div>
         </div>
     );
 }
@@ -73,13 +71,13 @@ const Skills = (props) => {
     return (
         <div className="skill-row">
             <div className="skill-column">
-                { props.skills.slice(0, half).map(function(s) {
-                    return getSkills(s, props.lang);
+                { props.skills.slice(0, half).map(function(s, i) {
+                    return getSkills(s, props.lang, i);
                 })}
             </div>
             <div className="skill-column skill-column-dx">
-                { props.skills.slice(half).map(function(s) {
-                    return getSkills(s, props.lang);
+                { props.skills.slice(half).map(function(s, i) {
+                    return getSkills(s, props.lang, i);
                 })}
             </div>
         </div>
