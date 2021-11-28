@@ -17,11 +17,11 @@ const Exp = (props) => {
         <div>
             <div className="element-container">
                 
-                { !mobileView && <p>{years}{title}</p>}
+                { !mobileView && <p>{years}{title}</p> }
                     
-                { mobileView && <p>{title}</p>}
+                { mobileView && <p>{title}</p> }
                 <p>
-                    { !mobileView && (<span className="element-left"></span>)}
+                    { !mobileView && (<span className="element-left"></span>) }
                     <span>
                         <span className="bold yellow">@</span> <Text text={props.at} lang={props.lang}/>
                     </span>

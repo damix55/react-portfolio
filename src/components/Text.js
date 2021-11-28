@@ -14,12 +14,17 @@ function formatText(text) {
         'C': 'cyan bold',
         'B': 'blue bold',
         'M': 'magenta bold',
-        'R': 'red bold'
+        'R': 'red bold',
+        'bold': 'bold'
     }
     for (const [key, value] of Object.entries(tagToClass)) {
         text = text.replaceAll(`<${key}>`, `<span className="${value}">`);
     }
     text = text.replaceAll(/<\/\w>/g,'</span>');
+
+    // icons
+    text = text.replaceAll('<i>', '<span className="icon">&#x');
+    text = text.replaceAll('</i>',';</span>');
     return parse(text);
 }
  

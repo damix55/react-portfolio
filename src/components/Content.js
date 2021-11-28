@@ -55,15 +55,12 @@ class Content extends Component {
     }
 
     return (
-      <div class='main-content'>
-        { this.state.pageContent.content !== undefined ? (
+      <div>
+        { this.state.pageContent.content !== undefined &&
           this.state.pageContent.content.map(function(b) {
             return getBlock(b, this.state.lang);
           }, this)
-        ) : (
-          ''
-        )}
-        <div className="bottom-spacer"></div>
+        }
       </div>
     );
   }
