@@ -1,5 +1,5 @@
 # dovico.dev
-![alt text](src/assets/img/website.png "screenshot")
+![alt text](public/img/projects/dovico.dev/website.png "screenshot")
 
 ## Installation
 To start the website just run
