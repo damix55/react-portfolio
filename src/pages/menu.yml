@@ -27,7 +27,7 @@ links:
     icon: f7a2
     color: magenta
 
-  - name: email
-    href: /
-    icon: f6ed
-    color: yellow
+  # - name: email
+  #   href: /
+  #   icon: f6ed
+  #   color: yellow

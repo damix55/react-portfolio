@@ -6,7 +6,6 @@ content:
         en: contacts
         it: contatti
     content:
-    - space: 1
     - text: <y><i>f6ed</i></y> damiano</G><m><i>f84b</i></m>dovico.dev
-    - text: <a href='https://www.linkedin.com/in/damiano-emanuele-dovico-8b5a63197/'><b><i>f83b</i></b> Linkedin</a>
-    - text: <a href='https://github.com/damix55'><m><i>f7a2</i></m> GitHub</a>
+    # - text: <a target='_blank' href='https://www.linkedin.com/in/damiano-emanuele-dovico-8b5a63197/'><b><i>f83b</i></b> Linkedin</a>
+    # - text: <a target='_blank' href='https://github.com/damix55'><m><i>f7a2</i></m> GitHub</a>

@@ -3,6 +3,7 @@ import React from 'react'
 import Text, {getTranslation} from './Text'
 import Exp from './Exp'
 import Skills from './Skills'
+import Project from './Project'
 
 
 function getComponent(component, lang, i) {
@@ -42,6 +43,18 @@ function getComponent(component, lang, i) {
             return (
                 <Skills
                     skills={component.skills}
+                    lang={lang}
+                    key={`component-${i}`}
+                />
+            );
+
+        case 'project':
+            console.log(component)
+            return (
+                <Project
+                    title={component.project.title}
+                    years={component.project.years}
+                    links={component.project.links}
                     lang={lang}
                     key={`component-${i}`}
                 />

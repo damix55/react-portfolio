@@ -219,7 +219,7 @@ class App extends Component {
           <div className="title-container">
             <div>
               <h1>Damiano Dovico</h1>
-              <span className="subtitle">Developer</span>
+              <span className="subtitle">{ this.state.lang==='en' ? ( 'Developer' ) : ( 'Sviluppatore' ) }</span>
             </div>
           </div>
           <div className="options-container">
@@ -261,7 +261,7 @@ class App extends Component {
               { this.state.menuData.links !== undefined &&
                 this.state.menuData.links.map(function(l, i) {
                   return(
-                    <a href={l.href} key={`link-${i}`}>
+                    <a href={l.href} target='_blank' key={`link-${i}`}>
                       <li>
                         <Icon hex={l.icon} color={l.color} /> <span>{l.name}</span>
                       </li>

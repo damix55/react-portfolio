@@ -3,7 +3,7 @@ content:
 
 - block:
     title:
-        en: blog
-        it: blog
+        en: Welcome to my website
+        it: Benvenuto sul mio sito
     content:
-    - text: work in progess
+    - text: Work in progress

@@ -1,5 +1,32 @@
 :root {
     /* one dark */
+    --background:    #1b1e25;
+    --selection:     #22262E;
+    --black:         #1e222a;
+    --borders:       #262A32;
+    --numbers:       #2D3139;
+    --text-options : #4B5263;
+    --text-extension:#4B5263;
+    --text:          #ABB2BF;
+    --title:         #FFFFFF;
+    --subtitle:      #ABB2BF;
+    --blue:          #61AFEF;
+    --cyan:          #56B6C2;
+    --green:         #98C379;
+    --yellow:        #D19A66;
+    --red:           #E06C75;
+    --magenta:       #C678DD;
+
+    --font-monospace:       'JetBrains Mono', 'Fira Code', monospace;
+    --font-sans-serif:      'Fira Sans', sans-serif;
+    --font-icons:           'Fira Code Nerd Font';
+    --font-size:            14px;
+    --line-height:          1.8em;
+}
+
+
+.one-dark {
+    /* one dark */
     --background:    #22252C;
     --selection:     #262a31;
     --black:         #282C34;
@@ -16,12 +43,6 @@
     --yellow:        #D19A66;
     --red:           #E06C75;
     --magenta:       #C678DD;
-
-    --font-monospace:       'Fira Code', monospace;
-    --font-sans-serif:      'Fira Sans', sans-serif;
-    --font-icons:           'Fira Code Nerd Font';
-    --font-size:            14px;
-    --line-height:          1.8em;
 }
 
 
@@ -356,6 +377,28 @@ p {
     content: "";
     display: table;
     clear: both;
+}
+
+.project-links-container {
+    color: var(--text-extension);
+}
+
+.project-link {
+    transition: color 0.5s;
+    cursor: pointer;
+}
+
+.project-link:hover {
+    color: var(--text);
+}
+
+.ril-toolbar__item {
+    padding: 0.75em;
+}
+
+.double-space {
+    min-width: 1.5em;
+    display: inline-block;
 }
 
 .bottom-spacer {

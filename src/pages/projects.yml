@@ -6,4 +6,110 @@ content:
         en: projects
         it: progetti
     content:
-    - text: work in progess
+    - space: 1
+
+    - project:
+        title: dovico.dev
+        years: 2021
+        links:
+          - icon: e709
+            title: github
+            href: https://github.com/damix55/dovico.dev
+
+          - icon: f894
+            title: blog post
+            href: "#"
+
+
+    - project:
+        title: 
+            it: Configurazione tastiera
+            en: Keyboard setup
+        years: 2021
+        links:
+          - icon: e709
+            title: github
+            href: https://github.com/damix55/kbd
+
+
+    - project:
+        title: SmartParking
+        years: 2021
+        links:
+          - icon: e709
+            title: github
+            href: https://github.com/damix55/SmartParking
+
+          - gallery:
+              - /img/projects/smartparking/niguarda.jpg
+              - /img/projects/smartparking/react1.png
+              - /img/projects/smartparking/react2.png
+              - /img/projects/smartparking/react3.png
+              - /img/projects/smartparking/telegram.png
+
+
+    - project:
+        title: WeekPlanner
+        years: 2021
+        links:
+          - icon: e709
+            title: github
+            href: https://github.com/damix55/WeekPlanner
+
+          - gallery:
+              - /img/projects/weekplanner/home.png
+
+
+    - project:
+        title: PSShow
+        years: 2020-21
+        links:
+          - icon: e709
+            title: github
+            href: https://github.com/damix55/PSShow
+
+          - gallery:
+              - /img/projects/psshow/movies.png
+              - /img/projects/psshow/series.png
+              - /img/projects/psshow/actors.png
+              - /img/projects/psshow/pulpfiction.png
+              - /img/projects/psshow/breakingbad.png
+              - /img/projects/psshow/ryanreynolds.png
+
+
+    - project:
+        title:
+            it: Orologio Kidle
+            en: Kindle clock
+        years: 2020-21
+        links:
+          - icon: e709
+            title: github
+            href: https://github.com/damix55/kindle-clock
+
+          - icon: f894
+            title: blog post
+            href: "#"
+
+          - gallery:
+              - /img/projects/kindleclock/1.jpg
+              - /img/projects/kindleclock/2.jpg
+              - /img/projects/kindleclock/3.jpg
+
+
+    - project:
+        title:
+            en: Andersen Real Estate website
+            it: Sito web di Andersen Real Estate
+        years: 2015-2016
+        links:
+          - icon: fa9e
+            title:
+              en: website
+              it: sito
+            href: http://andersenrealestate.it
+
+          - gallery:
+              - /img/projects/andersen/home.png
+              - /img/projects/andersen/details.png
+              - /img/projects/andersen/milano.png
