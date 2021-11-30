@@ -261,7 +261,7 @@ class App extends Component {
               { this.state.menuData.links !== undefined &&
                 this.state.menuData.links.map(function(l, i) {
                   return(
-                    <a href={l.href} target='_blank' key={`link-${i}`}>
+                    <a href={l.href} target='_blank' rel="noreferrer" key={`link-${i}`}>
                       <li>
                         <Icon hex={l.icon} color={l.color} /> <span>{l.name}</span>
                       </li>

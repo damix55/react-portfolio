@@ -18,7 +18,7 @@ class Project extends Component {
                 'en': 'gallery',
                 'it': 'galleria'
             }
-            
+
             return (
                 <span className="project-links-container"  key={index}>
                     <Gallery img={link.gallery} className='project-link'>
@@ -32,7 +32,7 @@ class Project extends Component {
         }
         else {
             return (
-                <span className="project-links-container"  key={index}>
+                <span className="project-links-container" rel="noreferrer" key={index}>
                     <a className="project-link" href={link.href} target='_blank'>
                         <Icon hex={link.icon} /> <Text text={link.title} lang={lang} />
                     </a>

@@ -61,23 +61,6 @@ content:
 
 
     - project:
-        title: PSShow
-        years: 2020-21
-        links:
-          - icon: e709
-            title: github
-            href: https://github.com/damix55/PSShow
-
-          - gallery:
-              - /img/projects/psshow/movies.png
-              - /img/projects/psshow/series.png
-              - /img/projects/psshow/actors.png
-              - /img/projects/psshow/pulpfiction.png
-              - /img/projects/psshow/breakingbad.png
-              - /img/projects/psshow/ryanreynolds.png
-
-
-    - project:
         title:
             it: Orologio Kidle
             en: Kindle clock
@@ -95,6 +78,23 @@ content:
               - /img/projects/kindleclock/1.jpg
               - /img/projects/kindleclock/2.jpg
               - /img/projects/kindleclock/3.jpg
+
+
+    - project:
+        title: PSShow
+        years: 2020
+        links:
+          - icon: e709
+            title: github
+            href: https://github.com/damix55/PSShow
+
+          - gallery:
+              - /img/projects/psshow/movies.png
+              - /img/projects/psshow/series.png
+              - /img/projects/psshow/actors.png
+              - /img/projects/psshow/pulpfiction.png
+              - /img/projects/psshow/breakingbad.png
+              - /img/projects/psshow/ryanreynolds.png
 
 
     - project:
