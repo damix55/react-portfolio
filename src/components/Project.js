@@ -5,11 +5,10 @@ import Icon from './Icon'
 import Gallery from './Gallery'
 
 
-// title, years, links, lang
+// title, years, links, tags, lang
 class Project extends Component {
     constructor(props) {
         super(props);
-        this.getLink = this.getLink.bind(this);
       }
 
     getLink(link, lang, index, length) {
@@ -20,7 +19,7 @@ class Project extends Component {
             }
 
             return (
-                <span className="project-links-container"  key={index}>
+                <span className="project-links-container" key={index}>
                     <Gallery img={link.gallery} className='project-link'>
                         <Icon hex='f7ee' /> <Text text={galleryText[lang]} lang={lang} />
                     </Gallery>
@@ -32,8 +31,8 @@ class Project extends Component {
         }
         else {
             return (
-                <span className="project-links-container" rel="noreferrer" key={index}>
-                    <a className="project-link" href={link.href} target='_blank'>
+                <span className="project-links-container" key={index}>
+                    <a className="project-link" href={link.href} target='_blank' rel="noreferrer">
                         <Icon hex={link.icon} /> <Text text={link.title} lang={lang} />
                     </a>
                     { index < length-1 &&
@@ -44,6 +43,21 @@ class Project extends Component {
         }
     }
     
+
+    getSkills(skill, lang, tags, index, length) {
+        console.log()
+        return (
+            <span key={index}>
+                <span className={`background-${tags[skill].color} tags`}>
+                    <Icon hex={tags[skill].icon} /> <Text text={tags[skill].title} lang={lang} />
+                </span>
+                { index < length-1 &&
+                    <span className='double-space'></span>
+                }
+            </span>
+        )
+    }
+
 
     render() {
         return (
@@ -56,16 +70,30 @@ class Project extends Component {
                         </span>
                         {' '}
                         <span className="bold magenta">{'('}</span>{this.props.years}<span className="bold magenta">{')'}</span>
+                        <span className='double-space'></span>
+                        <span className='double-space'></span>
+                        <span>
+                            { this.props.links.map(function(l, i) {
+                                return this.getLink(l, this.props.lang, i, this.props.links.length);
+                            }, this)}
+                        </span>
                     </span>
                 </p>
                 <p>
                     <span className="double-space"></span>
                     <span>
-                        { this.props.links.map(function(l, i) {
-                            return this.getLink(l, this.props.lang, i, this.props.links.length);
-                        }, this)}
+                        <Text text={ this.props.description } lang={ this.props.lang } />
                     </span>
                 </p>
+                { this.props.skills && (
+                <p>
+                    <span className="double-space"></span>
+                    <span>
+                        {this.props.skills.map(function(l, i) {
+                            return this.getSkills(l, this.props.lang, this.props.tags, i, this.props.skills.length);
+                        }, this)}
+                    </span>
+                </p>)}
 
                 <div className="spacer"></div>
             </div>

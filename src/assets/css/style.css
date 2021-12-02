@@ -13,7 +13,8 @@
     --blue:          #61AFEF;
     --cyan:          #56B6C2;
     --green:         #98C379;
-    --yellow:        #D19A66;
+    --yellow:        #E5C07B;
+    --orange:        #D19A66;
     --red:           #E06C75;
     --magenta:       #C678DD;
 
@@ -40,7 +41,8 @@
     --blue:          #61AFEF;
     --cyan:          #56B6C2;
     --green:         #98C379;
-    --yellow:        #D19A66;
+    --yellow:        #E5C07B;
+    --orange:        #D19A66;
     --red:           #E06C75;
     --magenta:       #C678DD;
 }
@@ -62,6 +64,7 @@
     --cyan:          #8abeb7;
     --green:         #b5bd68;
     --yellow:        #f0c674;
+    --orange:        #D19A66;
     --red:           #cc6666;
     --magenta:       #b294bb;
 }
@@ -83,6 +86,10 @@
     color: var(--yellow);
 }
 
+.orange {
+    color: var(--orange);
+}
+
 .red {
     color: var(--red);
 }
@@ -93,6 +100,41 @@
 
 .bold {
     font-weight: 700;
+}
+
+.background-blue {
+    color: var(--black);
+    background-color: var(--blue);
+}
+
+.background-cyan {
+    color: var(--black);
+    background-color: var(--cyan);
+}
+
+.background-green {
+    color: var(--black);
+    background-color: var(--green);
+}
+
+.background-yellow {
+    color: var(--black);
+    background-color: var(--yellow);
+}
+
+.background-orange {
+    color: var(--black);
+    background-color: var(--orange);
+}
+
+.background-red {
+    color: var(--black);
+    background-color: var(--red);
+}
+
+.background-magenta {
+    color: var(--black);
+    background-color: var(--magenta);
 }
 
 
@@ -187,7 +229,7 @@ h1 {
     min-width: 8.5em;
     height: 8.5em;
     background-size: cover;
-    border-radius: 8.5em;
+    border-radius: 100%;
     display: table-cell
 }
 
@@ -310,8 +352,8 @@ main h2 {
     font-size: 1em;
     font-weight: bold;
     color: var(--blue);
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     counter-increment: line;
     display: flex;
 }
@@ -395,6 +437,13 @@ p {
 .ril-toolbar__item {
     padding-left: 1.5em;
     padding-top: 1em;
+}
+
+.tags {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    border-radius: 0.3em;
+    text-shadow: 0 0 0.2em rgba(0,0,0,0.15);
 }
 
 .double-space {

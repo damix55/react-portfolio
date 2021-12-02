@@ -10,7 +10,7 @@ function getSkills(skill, lang, i) {
 
         var elementLeft =
             <span>
-                <span className="icon yellow">{parse(`&#x${skill.icon};`)}</span>{' '}
+                <span className="icon orange">{parse(`&#x${skill.icon};`)}</span>{' '}
                 <span className="bold"><Text text={skill.title} lang={lang} /></span>
             </span>
 

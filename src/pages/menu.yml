@@ -1,7 +1,7 @@
 pages:
   - name: home
     icon: f7db
-    color: yellow
+    color: orange
 
   - name: projects
     icon: f670

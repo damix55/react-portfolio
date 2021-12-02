@@ -6,6 +6,7 @@
 # space
 
 # Formatting:
+# <o>...</o>  Orange
 # <y>...</y>  Yellow
 # <g>...</g>  Green
 # <c>...</c>  Cyan
@@ -25,8 +26,8 @@ content:
         it: chi sono
     content:
     - text:
-        en: Hi! My name is <M>Damiano</M>. I’m a {{ age }}-year-old <G>developer</G> based in <Y>Milan, IT</Y>.
-        it: Ciao! Mi chiamo <M>Damiano</M>. Sono uno <G>sviluppatore</G> di {{ age }} anni con sede a <Y>Milano, IT</Y>.
+        en: Hi! My name is <M>Damiano</M>. I’m a {{ age }}-year-old <G>developer</G> based in <O>Milan, IT</O>.
+        it: Ciao! Mi chiamo <M>Damiano</M>. Sono uno <G>sviluppatore</G> di {{ age }} anni con sede a <O>Milano, IT</O>.
 
     - space: 2
 
@@ -86,7 +87,7 @@ content:
 - block:
     title:
         en: skills
-        it: abilità
+        it: competenze
     content:
     - skills:
         - title:
@@ -111,29 +112,13 @@ content:
             - title: Linux
               value: 8
 
-        - title:
-            en: Languages
-            it: Lingue
-          icon: f6e6
-          elements:
-            - title:
-                en: Italian
-                it: Italiano
-              value:
-                en: native
-                it: madrelingua
-            - title:
-                en: English
-                it: Inglese
-              value: C1
-
         - title: Database
           icon: f6b7
           elements:
             - title: MongoDB
               value: 6
             - title: SQL
-              value: 5
+              value: 6
 
         - title:
             en: Technologies
@@ -152,3 +137,37 @@ content:
               value: 9
             - title: CSS
               value: 8
+
+        - title:
+            en: Frameworks
+            it: Framework
+          icon: fc06
+          elements:
+            - title: Django
+              value: 8
+            - title: React
+              value: 6
+
+        - title:
+            en: Programs
+            it: Programmi
+          icon: e22b
+          elements:
+            - title: GIMP
+              value: 10
+
+        - title:
+            en: Languages
+            it: Lingue
+          icon: f6e6
+          elements:
+            - title:
+                en: Italian
+                it: Italiano
+              value:
+                en: native
+                it: madrelingua
+            - title:
+                en: English
+                it: Inglese
+              value: C1

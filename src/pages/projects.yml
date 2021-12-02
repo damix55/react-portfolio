@@ -1,6 +1,49 @@
 title: Projects
-content:
 
+tags:
+  react:
+    title: react
+    color: cyan
+    icon: fc06
+  # js:
+  #   title: js
+  #   color: yellow
+  #   icon: e781
+  docker:
+    title: docker
+    color: blue
+    icon: f308
+  python:
+    title: python
+    color: orange
+    icon: e73c
+  django:
+    title: django
+    color: green
+    icon: e73c
+  php:
+    title: php
+    color: magenta
+    icon: f81e
+  pg:
+    title: postgresql
+    color: blue
+    icon: f6b7
+  mysql:
+    title: mysql
+    color: yellow
+    icon: f6b7
+  spring:
+    title: spring
+    color: green
+    icon: e738
+  c++:
+    title: c++
+    color: yellow
+    icon: e61d
+
+
+content:
 - block:
     title:
         en: projects
@@ -11,6 +54,8 @@ content:
     - project:
         title: dovico.dev
         years: 2021
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+        skills: [docker, react]
         links:
           - icon: e709
             title: github
@@ -26,6 +71,8 @@ content:
             it: Configurazione tastiera
             en: Keyboard setup
         years: 2021
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        skills: 
         links:
           - icon: e709
             title: github
@@ -35,6 +82,8 @@ content:
     - project:
         title: SmartParking
         years: 2021
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        skills: [docker, react, python, c++, mysql]
         links:
           - icon: e709
             title: github
@@ -51,6 +100,8 @@ content:
     - project:
         title: WeekPlanner
         years: 2021
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        skills: [docker, react, django, mysql]
         links:
           - icon: e709
             title: github
@@ -65,6 +116,8 @@ content:
             it: Orologio Kidle
             en: Kindle clock
         years: 2020-21
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        skills: [python]
         links:
           - icon: e709
             title: github
@@ -83,6 +136,8 @@ content:
     - project:
         title: PSShow
         years: 2020
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        skills: [spring, pg]
         links:
           - icon: e709
             title: github
@@ -102,6 +157,8 @@ content:
             en: Andersen Real Estate website
             it: Sito web di Andersen Real Estate
         years: 2015-2016
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        skills: [php, mysql]
         links:
           - icon: fa9e
             title:
