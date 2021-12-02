@@ -6,7 +6,7 @@ import Skills from './Skills'
 import Project from './Project'
 
 
-function getComponent(component, lang, i) {
+function getComponent(component, lang, tags, i) {
     switch(Object.keys(component)[0]) {
         case 'space':
             var spaces = []
@@ -49,12 +49,14 @@ function getComponent(component, lang, i) {
             );
 
         case 'project':
-            console.log(component)
             return (
                 <Project
                     title={component.project.title}
                     years={component.project.years}
+                    description={component.project.description}
                     links={component.project.links}
+                    skills={component.project.skills}
+                    tags={tags}
                     lang={lang}
                     key={`component-${i}`}
                 />
@@ -73,7 +75,7 @@ const Block = (props) => {
             <section>
                 <h2>{'//'} { getTranslation(props.title, props.lang) }</h2>
                 { props.content.map(function(c, i) {
-                    return getComponent(c, props.lang, i);
+                    return getComponent(c, props.lang, props.tags, i);
                 })}
             </section>
         </div>

@@ -22,7 +22,7 @@ const Exp = (props) => {
                 <p>
                     { !mobileView && (<span className="element-left"></span>) }
                     <span>
-                        <span className="bold yellow">@</span> <Text text={props.at} lang={props.lang}/>
+                        <span className="bold orange">@</span> <Text text={props.at} lang={props.lang}/>
                     </span>
                 </p>
                 { mobileView && <p>{years}</p>}

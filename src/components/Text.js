@@ -9,12 +9,14 @@ function getAge() {
 
 function formatText(text) {
     var tagToClass = {
+        'o': 'orange',
         'y': 'yellow',
         'g': 'green',
         'c': 'cyan',
         'b': 'blue',
         'm': 'magenta',
         'r': 'red',
+        'O': 'orange bold',
         'Y': 'yellow bold',
         'G': 'green bold',
         'C': 'cyan bold',
