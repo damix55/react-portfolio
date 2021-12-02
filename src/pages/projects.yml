@@ -99,6 +99,17 @@ content:
 
     - project:
         title:
+          en: Amazon.it product and review scraper
+          it: Scraper di prodotti e recensioni di Amazon.it
+        years: 2018
+        links:
+          - icon: e709
+            title: github
+            href: https://github.com/damix55/AmazonItScraper
+
+
+    - project:
+        title:
             en: Andersen Real Estate website
             it: Sito web di Andersen Real Estate
         years: 2015-2016

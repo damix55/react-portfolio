@@ -2,8 +2,6 @@ title: Blog
 content:
 
 - block:
-    title:
-        en: Welcome to my website
-        it: Benvenuto sul mio sito
+    title: blog
     content:
-    - text: Work in progress
+    - text: work in progress
