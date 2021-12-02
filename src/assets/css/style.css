@@ -428,6 +428,7 @@ p {
 .project-link {
     transition: color 0.5s;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .project-link:hover {
@@ -444,6 +445,7 @@ p {
     padding-right: 0.3em;
     border-radius: 0.3em;
     text-shadow: 0 0 0.2em rgba(0,0,0,0.15);
+    white-space: nowrap;
 }
 
 .double-space {

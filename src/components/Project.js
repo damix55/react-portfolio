@@ -96,6 +96,7 @@ class Project extends Component {
                 </p>)}
 
                 <div className="spacer"></div>
+                
             </div>
         )
     }
