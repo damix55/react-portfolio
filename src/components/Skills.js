@@ -12,7 +12,7 @@ function getSkills(skill, skillset, lang, i, mobileView) {
 
     var elementLeft = (
         <span className='element-left'>
-            <span className="magenta bold">* {'['}</span>
+            <span className="magenta bold">{!mobileView && '* '}{'['}</span>
             <span><Text text={skill.title} lang={lang} /></span>
             <span className="magenta bold">{']'}</span>
         </span>
