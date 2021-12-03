@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import yaml from 'js-yaml'
 import Block from './Block'
+import Text from './Text'
 
 class Content extends Component {
     constructor (props) {
@@ -50,6 +51,9 @@ class Content extends Component {
                 key={`block-${index}`}
               />
             );
+
+        case 'title':
+          return <h2 className='half-spacer'><span>//{' '}<Text text={component.title} lang={lang} /></span></h2>
             
         default:
             return null

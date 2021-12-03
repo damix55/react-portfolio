@@ -102,6 +102,8 @@
     font-weight: 700;
 }
 
+/* background */
+
 .background-blue {
     color: var(--black);
     background-color: var(--blue);
@@ -135,6 +137,83 @@
 .background-magenta {
     color: var(--black);
     background-color: var(--magenta);
+}
+
+
+/* background hover */
+
+.background-hover-blue:hover {
+    color: var(--black);
+    background-color: var(--blue);
+}
+
+.background-hover-cyan:hover {
+    color: var(--black);
+    background-color: var(--cyan);
+}
+
+.background-hover-green:hover {
+    color: var(--black);
+    background-color: var(--green);
+}
+
+.background-hover-yellow:hover {
+    color: var(--black);
+    background-color: var(--yellow);
+}
+
+.background-hover-orange:hover {
+    color: var(--black);
+    background-color: var(--orange);
+}
+
+.background-hover-red:hover {
+    color: var(--black);
+    background-color: var(--red);
+}
+
+.background-hover-magenta:hover {
+    color: var(--black);
+    background-color: var(--magenta);
+}
+
+
+
+/* border */
+
+.border-blue {
+    border: 2px solid var(--blue);
+    color: var(--blue)
+}
+
+.border-cyan {
+    border: 2px solid var(--cyan);
+    color: var(--cyan)
+}
+
+.border-green {
+    border: 2px solid var(--green);
+    color: var(--green)
+}
+
+.border-yellow {
+    border: 2px solid var(--yellow);
+    color: var(--yellow)
+}
+
+.border-orange {
+    border: 2px solid var(--orange);
+    color: var(--orange)
+}
+
+.border-red {
+    border: 2px solid var(--red);
+    color: var(--red)
+}
+
+.border-magenta {
+    border: 2px solid var(--magenta);
+    color: var(--magenta)
 }
 
 
@@ -351,11 +430,11 @@ border: 0;
 main h2 {
     font-size: 1em;
     font-weight: bold;
-    color: var(--blue);
     margin-top: 0;
     margin-bottom: 0;
     counter-increment: line;
     display: flex;
+    color: var(--blue);
 }
 
 main p,
@@ -421,14 +500,19 @@ p {
     clear: both;
 }
 
+.project-title {
+    padding-right: 2em;
+}
+
 .project-links-container {
-    color: var(--text-extension);
+    padding-right: 1.5em;
 }
 
 .project-link {
     transition: color 0.5s;
     cursor: pointer;
     white-space: nowrap;
+    color: var(--text-extension);
 }
 
 .project-link:hover {
@@ -440,23 +524,31 @@ p {
     padding-top: 1em;
 }
 
-.tags {
-    padding-left: 0.3em;
-    padding-right: 0.3em;
-    border-radius: 0.3em;
-    text-shadow: 0 0 0.2em rgba(0,0,0,0.15);
+.tag-container {
+    padding-right: 1.5em;
     white-space: nowrap;
 }
 
-.double-space {
-    min-width: 1.5em;
-    display: inline-block;
+.tag {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    border-radius: 0.3em;
+    /* text-shadow: 0 0 0.2em rgba(0,0,0,0.15); */
+    transition: color 0.2s;
+}
+
+.tag:hover {
+    cursor: default;
+}
+
+
+.half-spacer {
+    line-height: calc(var(--line-height)*1.5);
 }
 
 .bottom-spacer {
-    height: 60vh;
+    height: 1.8em;
 }
-
 
 /* trovare soluzione migliore, per ora va bene così */
 @media only screen and (min-width: 85.5em) {

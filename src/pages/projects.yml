@@ -5,10 +5,10 @@ tags:
     title: react
     color: cyan
     icon: fc06
-  # js:
-  #   title: js
-  #   color: yellow
-  #   icon: e781
+  js:
+    title: javascript
+    color: yellow
+    icon: e781
   docker:
     title: docker
     color: blue
@@ -37,25 +37,31 @@ tags:
     title: spring
     color: green
     icon: e738
+  java:
+    title: java
+    color: red
+    icon: e738
   c++:
     title: c++
     color: yellow
     icon: e61d
+  mongo:
+    title: mongodb
+    color: green
+    icon: f6b7
 
 
 content:
 - block:
-    title:
-        en: projects
-        it: progetti
     content:
-    - space: 1
-
     - project:
         title: dovico.dev
+        icon: fa9e
         years: 2021
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-        skills: [docker, react]
+        description:
+            en: My personal website.
+            it: Il mio sito web personale.
+        skills: [docker, react, js]
         links:
           - icon: e709
             title: github
@@ -70,6 +76,7 @@ content:
         title: 
             it: Configurazione tastiera
             en: Keyboard setup
+        icon: f80b
         years: 2021
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         skills: 
@@ -81,9 +88,10 @@ content:
 
     - project:
         title: SmartParking
+        icon: f1b9
         years: 2021
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        skills: [docker, react, python, c++, mysql]
+        skills: [docker, react, python, c++, js, mysql]
         links:
           - icon: e709
             title: github
@@ -99,9 +107,10 @@ content:
 
     - project:
         title: WeekPlanner
+        icon: f5f4
         years: 2021
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        skills: [docker, react, django, mysql]
+        skills: [docker, react, django, python, js, mysql]
         links:
           - icon: e709
             title: github
@@ -115,6 +124,7 @@ content:
         title:
             it: Orologio Kidle
             en: Kindle clock
+        icon: f017
         years: 2020-21
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         skills: [python]
@@ -135,9 +145,10 @@ content:
 
     - project:
         title: PSShow
+        icon: f26c
         years: 2020
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        skills: [spring, pg]
+        skills: [java, spring, pg]
         links:
           - icon: e709
             title: github
@@ -156,7 +167,10 @@ content:
         title:
           en: Amazon.it product and review scraper
           it: Scraper di prodotti e recensioni di Amazon.it
+        icon: f270
         years: 2018
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        skills: [python, mongo]
         links:
           - icon: e709
             title: github
@@ -167,6 +181,7 @@ content:
         title:
             en: Andersen Real Estate website
             it: Sito web di Andersen Real Estate
+        icon: f015
         years: 2015-2016
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         skills: [php, mysql]

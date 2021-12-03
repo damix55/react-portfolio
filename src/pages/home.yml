@@ -21,23 +21,20 @@ content:
 # ABOUT ME                                                 #
 ############################################################
 - block:
-    title:
-        en: about me
-        it: chi sono
     content:
     - text:
         en: Hi! My name is <M>Damiano</M>. I’m a {{ age }}-year-old <G>developer</G> based in <O>Milan, IT</O>.
         it: Ciao! Mi chiamo <M>Damiano</M>. Sono uno <G>sviluppatore</G> di {{ age }} anni con sede a <O>Milano, IT</O>.
 
-    - space: 2
+    - space: 1
 
 ############################################################
 # EDUCATION                                                #
 ############################################################
+- title:
+    en: education
+    it: istruzione
 - block:
-    title:
-      en: education
-      it: istruzione
     content:
     - exp:
         start: 2019
@@ -63,15 +60,13 @@ content:
           it: "<R>Diploma di istruzione secondaria superiore</R>"
         at: Liceo Scientifico Statale "Leonardo da Vinci" - Milano
 
-    - space: 1
-
 ############################################################
 # WORK EXPERIENCE                                          #
 ############################################################
+- title:
+    en: work experience
+    it: esperienza lavorativa
 - block:
-    title:
-      en: work experience
-      it: esperienza lavorativa
     content:
     - exp:
         start: 2017
@@ -79,15 +74,13 @@ content:
         title: "<R>Rider</R>"
         at: Uber Eats
 
-    - space: 1
-
 ############################################################
 # SKILLS                                                   #
 ############################################################
+- title:
+    en: skills
+    it: competenze
 - block:
-    title:
-        en: skills
-        it: competenze
     content:
     - skills:
         - title:

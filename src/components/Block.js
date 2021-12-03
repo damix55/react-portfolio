@@ -52,6 +52,7 @@ function getComponent(component, lang, tags, i) {
             return (
                 <Project
                     title={component.project.title}
+                    icon={component.project.icon}
                     years={component.project.years}
                     description={component.project.description}
                     links={component.project.links}
@@ -73,7 +74,6 @@ const Block = (props) => {
     return (
         <div>
             <section>
-                <h2>{'//'} { getTranslation(props.title, props.lang) }</h2>
                 { props.content.map(function(c, i) {
                     return getComponent(c, props.lang, props.tags, i);
                 })}
