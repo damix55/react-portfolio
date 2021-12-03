@@ -24,7 +24,9 @@ const Exp = (props) => {
 
     var years = <span className="element-left">
                     { !mobileView && <span className="bold magenta">* </span> }
-                    <span className="bold magenta">{'{'}</span>{props.start}-{props.end}<span className="bold magenta">{'}'}</span>
+                    <span className="bold magenta">{'{'}</span>
+                    <Text text={props.start} lang={props.lang}/>-<Text text={props.end} lang={props.lang}/>
+                    <span className="bold magenta">{'}'}</span>
                 </span>
     var title = <span>
                     <span className='project-title' >

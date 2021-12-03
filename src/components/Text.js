@@ -8,6 +8,7 @@ function getAge() {
 }
 
 function formatText(text) {
+    text = text.toString()
     var tagToClass = {
         'o': 'orange',
         'y': 'yellow',

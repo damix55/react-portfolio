@@ -38,7 +38,9 @@ content:
     content:
     - exp:
         start: 2019
-        end: 2022
+        end:
+          en: <c>current</c>
+          it: <c>in corso</c>
         title:
           en: "<R>Master's Degree</R> in <G>Computer Science</G>"
           it: "<R>Laurea Magistrale</R> in <G>Informatica</G>"
