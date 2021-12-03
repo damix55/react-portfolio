@@ -1,56 +1,4 @@
 title: Projects
-
-tags:
-  react:
-    title: react
-    color: cyan
-    icon: fc06
-  js:
-    title: javascript
-    color: yellow
-    icon: e781
-  docker:
-    title: docker
-    color: blue
-    icon: f308
-  python:
-    title: python
-    color: orange
-    icon: e73c
-  django:
-    title: django
-    color: green
-    icon: e73c
-  php:
-    title: php
-    color: magenta
-    icon: f81e
-  pg:
-    title: postgresql
-    color: blue
-    icon: f6b7
-  mysql:
-    title: mysql
-    color: yellow
-    icon: f6b7
-  spring:
-    title: spring
-    color: green
-    icon: e738
-  java:
-    title: java
-    color: red
-    icon: e738
-  c++:
-    title: c++
-    color: yellow
-    icon: e61d
-  mongo:
-    title: mongodb
-    color: green
-    icon: f6b7
-
-
 content:
 - block:
     content:
@@ -79,7 +27,7 @@ content:
         icon: f80b
         years: 2021
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        skills: 
+        skills: [win, linux]
         links:
           - icon: e709
             title: github
@@ -127,7 +75,7 @@ content:
         icon: f017
         years: 2020-21
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        skills: [python]
+        skills: [python, linux]
         links:
           - icon: e709
             title: github

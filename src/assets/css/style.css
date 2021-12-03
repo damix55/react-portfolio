@@ -471,10 +471,16 @@ p {
 }
 
 .element-left {
-    min-width: 11em;
+    min-width: 12em;
 }
 
-.skill-left {
+.element-right {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/*.skill-left {
     min-width: 8em;
 }
 
@@ -493,12 +499,11 @@ p {
     width: calc(100% - 33.5em);
 }
   
-/* Clear floats after the columns */
 .skill-row:after {
     content: "";
     display: table;
     clear: both;
-}
+} */
 
 .project-title {
     padding-right: 2em;
@@ -526,14 +531,12 @@ p {
 
 .tag-container {
     padding-right: 1.5em;
-    white-space: nowrap;
 }
 
 .tag {
     padding-left: 0.3em;
     padding-right: 0.3em;
     border-radius: 0.3em;
-    /* text-shadow: 0 0 0.2em rgba(0,0,0,0.15); */
     transition: color 0.2s;
 }
 
@@ -550,7 +553,7 @@ p {
     height: 1.8em;
 }
 
-/* trovare soluzione migliore, per ora va bene così */
+/* trovare soluzione migliore, per ora va bene così
 @media only screen and (min-width: 85.5em) {
     .skill-column-dx p:before,
     .skill-column-dx .spacer:before{
@@ -565,7 +568,7 @@ p {
     .skill-column-dx .element-left {
         padding-left: 2.5em;
     }
-}
+} */
 
 @media only screen and (max-width: 1100px) {
     nav {
@@ -590,13 +593,13 @@ p {
         top: -0.05em;
     }
 
-    .skill-column {
+    /* .skill-column {
         width: 100%;
      }
 
     .skill-left {
         min-width: 12em;
-    }
+    } */
 
     .element-left {
         min-width: 15em;
@@ -680,7 +683,7 @@ p {
     }
 }
 
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
 
     .skill-column {
         width: 100%;
@@ -692,4 +695,4 @@ p {
     .skill-left {
         flex-grow: 1;
     }
-}
+} */

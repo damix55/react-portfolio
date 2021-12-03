@@ -1,86 +1,58 @@
 import React from 'react'
-import parse from 'html-react-parser'
 import Text from './Text'
+import SkillTag from './SkillTag'
 
 
-function getSkills(skill, lang, i) {
+function getSkills(skill, skillset, lang, i, mobileView) {
     var elements = []
     skill.elements.forEach(function (item, index) {
-        var mobileView = window.innerWidth < 800;
-
-        var elementLeft =
-            <span>
-                <span className="icon orange">{parse(`&#x${skill.icon};`)}</span>{' '}
-                <span className="bold"><Text text={skill.title} lang={lang} /></span>
-            </span>
-
-        var skillLeft =
-            <span className="green skill-left">
-                <Text text={item.title} lang={lang} />
-            </span>
-
-        var e = 
-            <div key={`skill-${index}`}>
-                { !mobileView &&
-                    <p>
-                        <span className="element-left">
-                            { index===0 && elementLeft }
-                        </span>
-                        { skillLeft }
-                        { getSkillValue(item.value, lang)}
-                    </p>
-                }
-                { mobileView && 
-                    <div>
-                        { index===0 && <p>{elementLeft}</p> }
-                        <p>{skillLeft} {getSkillValue(item.value, lang)}</p>
-                    </div>
-                }
-            </div>
-                
-        elements.push(e)  
-        
+        elements.push(<SkillTag name={item} skills={skillset} lang={lang} key={index}/>)   
     });
+    elements = <span className='element-right'>{ elements }</span>
 
-    return (
-        <div className="elements-container" key={`element-container-${i}`}>
-            { elements }
-            <div className='spacer'></div>
-        </div>
-    );
-}
-
-
-function getSkillValue(value, lang) {
-    if(typeof value == "number") {
-        return (
-            <span className="bold magenta">
-            <span>[</span>
-            <span className="skill-bar">{'#'.repeat(value)}</span>
-            <span>]</span>
+    var elementLeft = (
+        <span className='element-left'>
+            <span className="magenta bold">* {'['}</span>
+            <span><Text text={skill.title} lang={lang} /></span>
+            <span className="magenta bold">{']'}</span>
         </span>
-        )
+    )
+
+    if (mobileView) {
+        return (
+            <div key={`${i}`}>
+                <p className='half-spacer'>
+                    {elementLeft}
+                </p>
+                <p className='half-spacer'>
+                    {elements}
+                </p>
+                <div className='spacer'></div>
+            </div>
+        );
     }
-    return <Text text={value} lang={lang} />
+    return (
+        <p key={`${i}`} className='half-spacer'>
+            {elementLeft}
+            {elements}
+        </p>
+    );
+    
 }
+
 
 
 // start, end, title, at, lang
 const Skills = (props) => {
-    var half = Math.ceil(props.skills.length/2)
+    var mobileView = window.innerWidth < 800;
+
     return (
-        <div className="skill-row">
-            <div className="skill-column">
-                { props.skills.slice(0, half).map(function(s, i) {
-                    return getSkills(s, props.lang, i);
-                })}
-            </div>
-            <div className="skill-column skill-column-dx">
-                { props.skills.slice(half).map(function(s, i) {
-                    return getSkills(s, props.lang, i);
-                })}
-            </div>
+        <div>
+            { props.skills.map(function(s, i) {
+                return getSkills(s, props.skillset, props.lang, i, mobileView);
+            })}
         </div>
-    )};
+    )
+};
 
 export default Skills;

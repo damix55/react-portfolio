@@ -67,7 +67,7 @@ class App extends Component {
     }
 
     // fetch menu data
-    const menuData = require(`./pages/menu.yml`)
+    const menuData = require(`./misc/menu.yml`)
     fetch(menuData.default)
       .then(r => r.text())
       .then(text => yaml.load(text))

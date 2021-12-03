@@ -3,14 +3,11 @@ import React, { Component } from "react";
 import Text from './Text'
 import Icon from './Icon'
 import Gallery from './Gallery'
+import SkillTag from './SkillTag'
 
 
 // title, years, links, tags, lang
 class Project extends Component {
-    constructor(props) {
-        super(props);
-      }
-
     getLink(link, lang, index) {
         if (link.gallery) {
             var galleryText = {
@@ -38,15 +35,9 @@ class Project extends Component {
     }
     
 
-    getSkills(skill, lang, tags, index) {
-        console.log()
-        var color = tags[skill].color
+    getSkills(skill, skillset, lang, index) {
         return (
-            <span className='tag-container' key={index}>
-                <span className={`background-hover-${color} border-${color} tag`}>
-                    <Icon hex={tags[skill].icon} /> <Text text={tags[skill].title} lang={lang} />
-                </span>
-            </span>
+            <SkillTag name={skill} skills={skillset} lang={lang} key={index}/>
         )
     }
 
@@ -81,7 +72,7 @@ class Project extends Component {
                 <p className='half-spacer'>
                     <span>
                         {this.props.skills.map(function(l, i) {
-                            return this.getSkills(l, this.props.lang, this.props.tags, i);
+                            return this.getSkills(l, this.props.skillset, this.props.lang, i);
                         }, this)}
                     </span>
                 </p>)}

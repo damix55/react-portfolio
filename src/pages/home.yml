@@ -84,83 +84,39 @@ content:
     content:
     - skills:
         - title:
-            en: Programming
-            it: Programmazione
-          icon: f121
-          elements:
-            - title: Python
-              value: 10
-            - title: Javascript
-              value: 7
-            - title: Java
-              value: 7
-            - title: C/C++
-              value: 6
-
-        - title: OS
-          icon: fcbe
-          elements:
-            - title: Windows
-              value: 10
-            - title: Linux
-              value: 8
-
-        - title: Database
-          icon: f6b7
-          elements:
-            - title: MongoDB
-              value: 6
-            - title: SQL
-              value: 6
+            en: programming
+            it: programmazione
+          elements: [python, js, java, c++, php]
 
         - title:
-            en: Technologies
-            it: Tecnologie
-          icon: e702
-          elements:
-            - title: Docker
-              value: 8
-            - title: Git
-              value: 7
+            en: os
+            it: so
+          elements: [linux, win]
 
-        - title: Web dev
-          icon: fa9e
-          elements:
-            - title: HTML
-              value: 9
-            - title: CSS
-              value: 8
+        - title: database
+          elements: [mongo, mysql, pg]
 
         - title:
-            en: Frameworks
-            it: Framework
-          icon: fc06
-          elements:
-            - title: Django
-              value: 8
-            - title: React
-              value: 6
+            en: technologies
+            it: tecnologie
+          elements: [docker, git]
+
+        - title: web dev
+          elements: [html, css]
 
         - title:
-            en: Programs
-            it: Programmi
-          icon: e22b
-          elements:
-            - title: GIMP
-              value: 10
+            en: frameworks
+            it: framework
+          elements: [django, react, spring]
 
         - title:
-            en: Languages
-            it: Lingue
-          icon: f6e6
-          elements:
-            - title:
-                en: Italian
-                it: Italiano
-              value:
-                en: native
-                it: madrelingua
-            - title:
-                en: English
-                it: Inglese
-              value: C1
+            en: programs
+            it: programmi
+          elements: [gimp]
+
+        - title:
+            en: languages
+            it: lingue
+          elements: [italian, english]
+
+    - space: 1

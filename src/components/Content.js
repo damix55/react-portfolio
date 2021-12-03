@@ -9,16 +9,18 @@ class Content extends Component {
 
         this.state = {
             pageContent: {},
+            skills: {},
             lang: props.lang
         }
 
-        this.fetchData(props.name)
+        this.fetchData(props.name, 'pageContent')
+        this.fetchData('skills', 'skills')
     }
 
     
     componentDidUpdate = (prevProps) => {
         if (prevProps.name !== this.props.name) {
-            this.fetchData(this.props.name)
+            this.fetchData(this.props.name, 'pageContent')
         }
 
         if (prevProps.lang !== this.props.lang) {
@@ -27,18 +29,15 @@ class Content extends Component {
     }
     
     
-    fetchData(name) {
+    fetchData(name, state) {
         const data = require(`../pages/${name}.yml`)
         fetch(data.default)
         .then(r => r.text())
         .then(text => yaml.load(text))
-        .then(yml => this.setState({pageContent: yml}));
+        .then(yml => this.setState({[state]: yml}));
     }
 
-
-
-  render() {
-    function getBlock(component, lang, tags, index) {
+    getBlock(component, lang, skills, index) {
       switch(Object.keys(component)[0]) {
         case 'block':
             var b = component.block
@@ -46,25 +45,26 @@ class Content extends Component {
               <Block
                 title={b.title}
                 content={b.content}
-                tags={tags}
+                skills={skills}
                 lang={lang} 
                 key={`block-${index}`}
               />
             );
 
         case 'title':
-          return <h2 className='half-spacer'><span>//{' '}<Text text={component.title} lang={lang} /></span></h2>
+          return <h2 className='half-spacer'><span>{'// '}<Text text={component.title} lang={lang} key={`title-${index}`} /></span></h2>
             
         default:
             return null
       }
     }
 
+  render() {
     return (
       <div>
         { this.state.pageContent.content !== undefined &&
           this.state.pageContent.content.map(function(b, i) {
-            return getBlock(b, this.state.lang, this.state.pageContent.tags, i);
+            return this.getBlock(b, this.state.lang, this.state.skills, i);
           }, this)
         }
       </div>
