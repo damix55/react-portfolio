@@ -6,9 +6,15 @@ import SkillTag from './SkillTag'
 function getSkills(skill, skillset, lang, i, mobileView) {
     var elements = []
     skill.elements.forEach(function (item, index) {
-        elements.push(<SkillTag name={item} skills={skillset} lang={lang} key={index}/>)   
+        elements.push(
+            <SkillTag
+                name={item}
+                skills={skillset}
+                lang={lang}
+                key={index}
+            />)   
     });
-    elements = <span className='element-right'>{ elements }</span>
+    elements = <span className='tags-line'>{ elements }</span>
 
     var elementLeft = (
         <span className='element-left'>

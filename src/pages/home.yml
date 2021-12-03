@@ -51,6 +51,12 @@ content:
           en: "<R>Bachelor's Degree</R> in <G>Computer Science</G>"
           it: "<R>Laurea Triennale</R> in <G>Informatica</G>"
         at: Università degli Studi di Milano-Bicocca
+        links:
+          - icon: f623
+            title:
+                en: certificate
+                it: certificato
+            href: https://credential.unimib.it/blockcerts/1d0ab1b0-016b-11ea-9aed-bde4a3711501
 
     - exp:
         start: 2011

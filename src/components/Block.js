@@ -34,6 +34,7 @@ function getComponent(component, lang, skills, i) {
                     end={component.exp.end}
                     title={component.exp.title}
                     at={component.exp.at}
+                    links={component.exp.links}
                     lang={lang} 
                     key={`component-${i}`}
                 />

@@ -1,8 +1,24 @@
 import React from 'react';
 import Text from './Text'
+import Icon from './Icon'
+import Link from './Link'
 
 
-// start, end, title, at, lang
+function getLink(link, lang, index) {
+    var title = link.title[lang]
+    if (title === undefined) {
+        title = link.title
+    }
+    return (
+        <span className="project-links-container" key={index} title={title}>
+            <a className="project-link" href={link.href} target='_blank' rel="noreferrer">
+                <Icon hex={link.icon} /> {/* <Text text={title} lang={lang} /> */}
+            </a>
+        </span>
+    )
+}
+
+// start, end, title, at, links, lang
 const Exp = (props) => {
     var mobileView = window.innerWidth < 800;
 
@@ -10,7 +26,16 @@ const Exp = (props) => {
                     { !mobileView && <span className="bold magenta">* </span> }
                     <span className="bold magenta">{'{'}</span>{props.start}-{props.end}<span className="bold magenta">{'}'}</span>
                 </span>
-    var title = <Text text={props.title} lang={props.lang}/>
+    var title = <span>
+                    <span className='project-title' >
+                        <Text text={props.title} lang={props.lang}/>
+                    </span>
+                    
+                    { props.links && props.links.map(function(l, i) {
+                        l['color'] = 'orange'
+                        return <Link link={l} lang={props.lang} key={i} />
+                    })}
+                </span>
 
     return (
         <div>

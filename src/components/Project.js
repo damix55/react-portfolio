@@ -2,39 +2,12 @@ import React, { Component } from "react";
 
 import Text from './Text'
 import Icon from './Icon'
-import Gallery from './Gallery'
+import Link from './Link'
 import SkillTag from './SkillTag'
 
 
 // title, years, links, tags, lang
 class Project extends Component {
-    getLink(link, lang, index) {
-        if (link.gallery) {
-            var galleryText = {
-                'en': 'gallery',
-                'it': 'galleria'
-            }
-
-            return (
-                <span className="project-links-container" key={index}>
-                    <Gallery img={link.gallery} className='project-link'>
-                        <Icon hex='f7ee' /> <Text text={galleryText[lang]} lang={lang} />
-                    </Gallery>
-                </span>
-            )
-        }
-        else {
-            return (
-                <span className="project-links-container" key={index}>
-                    <a className="project-link" href={link.href} target='_blank' rel="noreferrer">
-                        <Icon hex={link.icon} /> <Text text={link.title} lang={lang} />
-                    </a>
-                </span>
-            )
-        }
-    }
-    
-
     getSkills(skill, skillset, lang, index) {
         return (
             <SkillTag name={skill} skills={skillset} lang={lang} key={index}/>
@@ -46,7 +19,6 @@ class Project extends Component {
         return (
             <div>
                 <p>
-                    
                     <span>
                         <span className='project-title'>
                             <span className="red bold">
@@ -58,7 +30,7 @@ class Project extends Component {
                         
                         <span>
                             { this.props.links.map(function(l, i) {
-                                return this.getLink(l, this.props.lang, i);
+                                return <Link link={l} lang={this.props.lang} key={i} />
                             }, this)}
                         </span>
                     </span>
@@ -70,7 +42,7 @@ class Project extends Component {
                 </p>
                 { this.props.skills && (
                 <p className='half-spacer'>
-                    <span>
+                    <span className='tags-line'>
                         {this.props.skills.map(function(l, i) {
                             return this.getSkills(l, this.props.skillset, this.props.lang, i);
                         }, this)}

@@ -14,10 +14,12 @@ content:
           - icon: e709
             title: github
             href: https://github.com/damix55/dovico.dev
+            color: magenta
 
           - icon: f894
             title: blog post
             href: "#"
+            color: orange
 
 
     - project:
@@ -32,6 +34,7 @@ content:
           - icon: e709
             title: github
             href: https://github.com/damix55/kbd
+            color: magenta
 
 
     - project:
@@ -44,6 +47,7 @@ content:
           - icon: e709
             title: github
             href: https://github.com/damix55/SmartParking
+            color: magenta
 
           - gallery:
               - /img/projects/smartparking/niguarda.jpg
@@ -63,6 +67,7 @@ content:
           - icon: e709
             title: github
             href: https://github.com/damix55/WeekPlanner
+            color: magenta
 
           - gallery:
               - /img/projects/weekplanner/home.png
@@ -77,13 +82,15 @@ content:
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         skills: [python, linux]
         links:
-          - icon: e709
-            title: github
-            href: https://github.com/damix55/kindle-clock
-
           - icon: f894
             title: blog post
             href: "#"
+            color: orange
+
+          - icon: e709
+            title: github
+            href: https://github.com/damix55/kindle-clock
+            color: magenta
 
           - gallery:
               - /img/projects/kindleclock/1.jpg
@@ -101,6 +108,7 @@ content:
           - icon: e709
             title: github
             href: https://github.com/damix55/PSShow
+            color: magenta
 
           - gallery:
               - /img/projects/psshow/movies.png
@@ -123,6 +131,7 @@ content:
           - icon: e709
             title: github
             href: https://github.com/damix55/AmazonItScraper
+            color: magenta
 
 
     - project:
@@ -139,6 +148,7 @@ content:
               en: website
               it: sito
             href: http://andersenrealestate.it
+            color: green
 
           - gallery:
               - /img/projects/andersen/home.png

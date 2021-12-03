@@ -102,118 +102,83 @@
     font-weight: 700;
 }
 
-/* background */
 
-.background-blue {
-    color: var(--black);
-    background-color: var(--blue);
+/* border hover */
+
+p:hover .border-hover-blue{
+    color: var(--blue);
+    border-color: var(--blue);
 }
 
-.background-cyan {
-    color: var(--black);
-    background-color: var(--cyan);
-}
-
-.background-green {
-    color: var(--black);
-    background-color: var(--green);
-}
-
-.background-yellow {
-    color: var(--black);
-    background-color: var(--yellow);
-}
-
-.background-orange {
-    color: var(--black);
-    background-color: var(--orange);
-}
-
-.background-red {
-    color: var(--black);
-    background-color: var(--red);
-}
-
-.background-magenta {
-    color: var(--black);
-    background-color: var(--magenta);
+p:hover .border-hover-cyan{
+    color: var(--cyan);
+    border-color: var(--cyan);
 }
 
 
-/* background hover */
-
-.background-hover-blue:hover {
-    color: var(--black);
-    background-color: var(--blue);
+p:hover .border-hover-green{
+    color: var(--green);
+    border-color: var(--green);
 }
 
-.background-hover-cyan:hover {
-    color: var(--black);
-    background-color: var(--cyan);
+p:hover .border-hover-yellow{
+    color: var(--yellow);
+    border-color: var(--yellow);
 }
 
-.background-hover-green:hover {
-    color: var(--black);
-    background-color: var(--green);
+p:hover .border-hover-orange{
+    color: var(--orange);
+    border-color: var(--orange);
 }
 
-.background-hover-yellow:hover {
-    color: var(--black);
-    background-color: var(--yellow);
+p:hover .border-hover-red{
+    color: var(--red);
+    border-color: var(--red);
 }
 
-.background-hover-orange:hover {
-    color: var(--black);
-    background-color: var(--orange);
+p:hover .border-hover-magenta{
+    color: var(--magenta);
+    border-color: var(--magenta);
 }
 
-.background-hover-red:hover {
-    color: var(--black);
-    background-color: var(--red);
+
+/* color hover */
+
+
+p:hover .hover-blue{
+    color: var(--blue);
 }
 
-.background-hover-magenta:hover {
-    color: var(--black);
-    background-color: var(--magenta);
+p:hover .hover-cyan{
+    color: var(--cyan);
+}
+
+p:hover .hover-green{
+    color: var(--green);
+}
+
+p:hover .hover-yellow{
+    color: var(--yellow);
+}
+
+p:hover .hover-orange{
+    color: var(--orange);
+}
+
+p:hover .hover-red{
+    color: var(--red);
+}
+
+p:hover .hover-magenta{
+    color: var(--magenta);
 }
 
 
 
-/* border */
 
-.border-blue {
-    border: 2px solid var(--blue);
-    color: var(--blue)
-}
-
-.border-cyan {
-    border: 2px solid var(--cyan);
-    color: var(--cyan)
-}
-
-.border-green {
-    border: 2px solid var(--green);
-    color: var(--green)
-}
-
-.border-yellow {
-    border: 2px solid var(--yellow);
-    color: var(--yellow)
-}
-
-.border-orange {
-    border: 2px solid var(--orange);
-    color: var(--orange)
-}
-
-.border-red {
-    border: 2px solid var(--red);
-    color: var(--red)
-}
-
-.border-magenta {
-    border: 2px solid var(--magenta);
-    color: var(--magenta)
+.border-grey {
+    border: 2px solid var(--text-extension);
+    color: var(--text-extension);
 }
 
 
@@ -238,6 +203,15 @@ a {
     color: inherit;
     font-style: inherit;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.cursor-normal {
+    cursor: default;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 .main-container {
@@ -474,7 +448,7 @@ p {
     min-width: 12em;
 }
 
-.element-right {
+.tags-line {
     display: flex;
     flex-wrap: wrap;
 }
@@ -514,14 +488,11 @@ p {
 }
 
 .project-link {
-    transition: color 0.5s;
+    transition: color 0.2s;
     cursor: pointer;
     white-space: nowrap;
     color: var(--text-extension);
-}
-
-.project-link:hover {
-    color: var(--text);
+    display: inline-block;
 }
 
 .ril-toolbar__item {
@@ -537,11 +508,11 @@ p {
     padding-left: 0.3em;
     padding-right: 0.3em;
     border-radius: 0.3em;
-    transition: color 0.2s;
+    transition: 0.2s;
 }
 
-.tag:hover {
-    cursor: default;
+.tag-left {
+    padding-right: 1em;
 }
 
 
@@ -550,7 +521,8 @@ p {
 }
 
 .bottom-spacer {
-    height: 1.8em;
+    height: calc(var(--line-height)*5);
+    /* height: 1.8em; */
 }
 
 /* trovare soluzione migliore, per ora va bene così
