@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import yaml from 'js-yaml'
 import Block from './Block'
 import Text from './Text'
+import Icon from './Icon'
 
 class Content extends Component {
     constructor (props) {
@@ -53,8 +54,16 @@ class Content extends Component {
             );
 
         case 'title':
-          return <h2 className='half-spacer'><span>//{' '}<Text text={component.title} lang={lang} /></span></h2>
-            
+          var title = component.title
+          return (
+            <h2 className='half-spacer'>
+              <span>
+                <Icon hex={title.icon} />
+                {' '}
+                <Text text={title.text} lang={lang} />
+              </span>
+            </h2>
+          )
         default:
             return null
       }

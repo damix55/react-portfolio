@@ -32,8 +32,11 @@ content:
 # EDUCATION                                                #
 ############################################################
 - title:
-    en: education
-    it: istruzione
+    icon: f973
+    text:
+      en: education
+      it: istruzione
+
 - block:
     content:
     - exp:
@@ -64,8 +67,11 @@ content:
 # WORK EXPERIENCE                                          #
 ############################################################
 - title:
-    en: work experience
-    it: esperienza lavorativa
+    icon: f0f2
+    text:
+        en: work experience
+        it: esperienza lavorativa
+
 - block:
     content:
     - exp:
@@ -78,8 +84,11 @@ content:
 # SKILLS                                                   #
 ############################################################
 - title:
-    en: skills
-    it: competenze
+    icon: f425
+    text:
+      en: skills
+      it: competenze
+
 - block:
     content:
     - skills:
